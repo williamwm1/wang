@@ -67,14 +67,40 @@ npm start
 ## 部署到云端 / Deploying to the cloud
 
 应用是标准的 Node 服务，可部署到任意支持 Node 的平台（Render、Railway、Fly.io、
-自有 VPS 等）。要点 / Notes：
+自有 VPS 等）。仓库已附带 `Dockerfile` 和 Render 蓝图 `render.yaml`。
 
-- 设置环境变量（同 `.env` 里的各项），并把 `JWT_SECRET` 设为强随机值。
-- SQLite 数据库文件由 `DB_PATH` 指定，请挂载到**持久化磁盘**，否则重启会丢数据。
+### 方式 A：Render（推荐，最省心）
+
+1. 在 Render 选择 **New → Blueprint**，连接此仓库；它会读取 `render.yaml`
+   自动建好 Web 服务和 1GB 持久化磁盘（挂载在 `/data`，SQLite 数据库存这里）。
+2. 在 Render 控制台填入 `SQUARE_ACCESS_TOKEN` 和 `SQUARE_LOCATION_ID`
+   （`JWT_SECRET` 已自动生成）。
+3. 首次部署完成后，在 Render 的 **Shell** 里运行一次 `npm run init-admin`
+   创建管理员账号。
+4. 打开 Render 给的 `https://...onrender.com` 网址即可，所有员工共用这个网址。
+
+### 方式 B：Docker（自有服务器 / 其他平台）
+
+```bash
+docker build -t pickup-app .
+docker run -d -p 3000:3000 \
+  -e JWT_SECRET="一长串随机字符" \
+  -e SQUARE_ACCESS_TOKEN="..." \
+  -e SQUARE_ENVIRONMENT="production" \
+  -e SQUARE_LOCATION_ID="..." \
+  -v pickup-data:/data \
+  --name pickup-app pickup-app
+# 创建管理员: docker exec -it pickup-app npm run init-admin
+```
+
+### 通用要点 / Notes
+
+- `JWT_SECRET` 务必设为强随机值。
+- SQLite 数据库文件由 `DB_PATH` 指定，必须挂载到**持久化磁盘/卷**，否则重启丢数据。
   门店规模下 SQLite 足够；如需更高并发可改用 PostgreSQL（数据访问集中在
   `server/db.js`，便于替换）。
 - 平台通常通过 `PORT` 环境变量指定端口，本应用已支持。
-- 建议放在 HTTPS 之后（多数平台默认提供）。
+- 建议放在 HTTPS 之后（多数平台默认提供）。健康检查路径：`/api/config`。
 
 ---
 
