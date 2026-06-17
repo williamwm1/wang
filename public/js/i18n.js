@@ -1,0 +1,201 @@
+// Bilingual strings. window.t(key) returns the string for the current language.
+window.I18N = {
+  zh: {
+    app_title: '提货管理系统',
+    login: '登录',
+    logout: '退出',
+    email: '邮箱',
+    password: '密码',
+    signing_in: '登录中…',
+    online: '在线',
+    lang_toggle: 'EN',
+
+    tab_invoices: '发票 / 提货',
+    tab_inventory: '库存',
+    tab_returns: '退换货',
+    tab_activity: '操作记录',
+    tab_users: '员工管理',
+
+    search: '搜索…',
+    refresh: '刷新',
+    loading: '加载中…',
+    none: '暂无数据',
+
+    // invoice
+    invoice_no: '发票号',
+    customer: '客户',
+    payment: '付款状态',
+    pickup: '提货状态',
+    amount_due: '待付金额',
+    total: '总额',
+    paid: '已付',
+    unpaid: '未付',
+    partially_paid: '部分付款',
+    draft: '草稿',
+    scheduled: '已排期',
+    canceled: '已取消',
+    pickup_none: '未提货',
+    pickup_partial: '部分提货',
+    pickup_complete: '已提完',
+
+    // invoice detail
+    item: '货物名称',
+    qty_ordered: '订购数量',
+    qty_picked: '已提',
+    qty_remaining: '剩余',
+    record_pickup: '登记提货',
+    record_return: '登记退换货',
+    pickup_history: '提货记录',
+    return_history: '退换货记录',
+
+    // pickup form
+    select_items: '选择本次提取的货物及数量',
+    pickup_person: '提货人',
+    pickup_datetime: '提货日期时间',
+    notes: '备注',
+    signature: '提货人签名',
+    clear_signature: '清除签名',
+    save: '保存',
+    cancel: '取消',
+    saving: '保存中…',
+    delete: '删除',
+    confirm_delete: '确定删除这条记录吗？',
+
+    // returns
+    return_type: '类型',
+    type_return: '退货',
+    type_exchange: '换货',
+    reason: '原因',
+    handler: '经办人',
+    new_return: '新建退换货',
+
+    // inventory
+    stock_qty: '库存数量',
+    in_stock: '有货',
+    out_of_stock: '缺货',
+
+    // users
+    name: '姓名',
+    role: '角色',
+    admin: '管理员',
+    staff: '员工',
+    status: '状态',
+    active: '启用',
+    disabled: '停用',
+    new_user: '新建账号',
+    reset_password: '重置密码',
+    enable: '启用',
+    disable: '停用',
+    created_at: '创建时间',
+
+    // activity
+    act_time: '时间',
+    act_user: '操作人',
+    act_action: '操作',
+    act_detail: '详情',
+
+    by: '操作人',
+    at: '时间',
+    square_not_configured: '⚠ Square 尚未配置：请在服务器 .env 中填写 SQUARE_ACCESS_TOKEN 和 SQUARE_LOCATION_ID。',
+    error: '出错',
+  },
+  en: {
+    app_title: 'Pickup Management',
+    login: 'Sign in',
+    logout: 'Sign out',
+    email: 'Email',
+    password: 'Password',
+    signing_in: 'Signing in…',
+    online: 'online',
+    lang_toggle: '中文',
+
+    tab_invoices: 'Invoices / Pickup',
+    tab_inventory: 'Inventory',
+    tab_returns: 'Returns',
+    tab_activity: 'Activity Log',
+    tab_users: 'Staff',
+
+    search: 'Search…',
+    refresh: 'Refresh',
+    loading: 'Loading…',
+    none: 'No data',
+
+    invoice_no: 'Invoice #',
+    customer: 'Customer',
+    payment: 'Payment',
+    pickup: 'Pickup',
+    amount_due: 'Amount due',
+    total: 'Total',
+    paid: 'Paid',
+    unpaid: 'Unpaid',
+    partially_paid: 'Partially paid',
+    draft: 'Draft',
+    scheduled: 'Scheduled',
+    canceled: 'Canceled',
+    pickup_none: 'Not picked up',
+    pickup_partial: 'Partial',
+    pickup_complete: 'Complete',
+
+    item: 'Item',
+    qty_ordered: 'Ordered',
+    qty_picked: 'Picked',
+    qty_remaining: 'Remaining',
+    record_pickup: 'Record pickup',
+    record_return: 'Record return',
+    pickup_history: 'Pickup history',
+    return_history: 'Return history',
+
+    select_items: 'Select items & quantities for this pickup',
+    pickup_person: 'Picked up by',
+    pickup_datetime: 'Pickup date & time',
+    notes: 'Notes',
+    signature: 'Signature',
+    clear_signature: 'Clear',
+    save: 'Save',
+    cancel: 'Cancel',
+    saving: 'Saving…',
+    delete: 'Delete',
+    confirm_delete: 'Delete this record?',
+
+    return_type: 'Type',
+    type_return: 'Return',
+    type_exchange: 'Exchange',
+    reason: 'Reason',
+    handler: 'Handled by',
+    new_return: 'New return / exchange',
+
+    stock_qty: 'Stock qty',
+    in_stock: 'In stock',
+    out_of_stock: 'Out of stock',
+
+    name: 'Name',
+    role: 'Role',
+    admin: 'Admin',
+    staff: 'Staff',
+    status: 'Status',
+    active: 'Active',
+    disabled: 'Disabled',
+    new_user: 'New account',
+    reset_password: 'Reset password',
+    enable: 'Enable',
+    disable: 'Disable',
+    created_at: 'Created',
+
+    act_time: 'Time',
+    act_user: 'User',
+    act_action: 'Action',
+    act_detail: 'Detail',
+
+    by: 'By',
+    at: 'At',
+    square_not_configured: '⚠ Square is not configured. Set SQUARE_ACCESS_TOKEN and SQUARE_LOCATION_ID in the server .env.',
+    error: 'Error',
+  },
+};
+
+window.getLang = () => localStorage.getItem('lang') || 'zh';
+window.setLang = (l) => localStorage.setItem('lang', l);
+window.t = (key) => {
+  const lang = window.getLang();
+  return (window.I18N[lang] && window.I18N[lang][key]) || window.I18N.zh[key] || key;
+};
