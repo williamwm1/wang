@@ -1,0 +1,30 @@
+# Render 一键部署蓝图 / Render deploy blueprint.
+# 用法 / Usage:
+#   1. 把这个仓库连接到 Render (New > Blueprint)。
+#   2. Render 会读取本文件自动建好服务和持久化磁盘。
+#   3. 在 Render 控制台填入 SQUARE_ACCESS_TOKEN 和 SQUARE_LOCATION_ID。
+#   4. 首次部署后，在 Render 的 Shell 里运行: npm run init-admin
+services:
+  - type: web
+    name: pickup-app
+    runtime: node
+    plan: starter            # starter 起步即可挂载持久化磁盘
+    buildCommand: npm ci --omit=dev
+    startCommand: node server/index.js
+    healthCheckPath: /api/config
+    autoDeploy: true
+    disk:
+      name: data
+      mountPath: /data       # SQLite 数据库存这里，重启不丢
+      sizeGB: 1
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true  # Render 自动生成强随机密钥
+      - key: DB_PATH
+        value: /data/app.sqlite
+      - key: SQUARE_ENVIRONMENT
+        value: production
+      - key: SQUARE_ACCESS_TOKEN
+        sync: false          # 在控制台手动填写（不入库）
+      - key: SQUARE_LOCATION_ID
+        sync: false          # 在控制台手动填写

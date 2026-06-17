@@ -1,0 +1,9 @@
+node_modules
+.git
+.env
+*.sqlite
+*.sqlite-journal
+*.db
+data
+npm-debug.log*
+.DS_Store
