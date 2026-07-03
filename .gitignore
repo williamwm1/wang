@@ -6,3 +6,8 @@ node_modules/
 data/
 npm-debug.log*
 .DS_Store
+
+# PyInstaller build output
+dist/
+build/
+.vf_venv/

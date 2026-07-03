@@ -1,0 +1,44 @@
+name: Build VoiceForge Desktop
+
+# Manual trigger only (so it never surprises you or burns Actions minutes).
+# Actions tab → "Build VoiceForge Desktop" → Run workflow.
+# Also runs when you push a tag like v1.0.0.
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            artifact: VoiceForge-Windows
+          - os: macos-latest
+            artifact: VoiceForge-macOS
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r voiceforge/requirements.txt
+          python -m pip install pyinstaller imageio-ffmpeg
+
+      - name: Build desktop app
+        run: python voiceforge/packaging/build.py
+
+      - name: Upload built app
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: dist/
+          if-no-files-found: error
