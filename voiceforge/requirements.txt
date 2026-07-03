@@ -11,8 +11,11 @@ soundfile>=0.12
 librosa>=0.10
 pyloudnorm>=0.1.1
 
-# GUI
+# GUI (desktop)
 PySide6>=6.5
+
+# Web UI (browser front-end: python -m voiceforge.webapp)
+Flask>=3.0
 
 # Optional, for best-quality AI de-noise (falls back to RNNoise / afftdn if
 # not installed). Install manually only if you want it:

@@ -104,6 +104,15 @@ python -m voiceforge.cli input.mp4 -o output_dir --waveforms
 ```
 `--waveforms` 会额外渲染处理前后的波形对比 PNG。
 
+### 浏览器界面（远程 / 无桌面环境）
+桌面窗口无法在无显示器的远程机器上打开时，用同一套 pipeline 的 Web 界面：
+```bash
+python -m voiceforge.webapp        # 打开 http://localhost:8000
+pip install flask                  # 首次需安装 flask
+```
+浏览器里拖入文件 → 一键处理 → 在线试听修复后视频 / 下载 / 查看前后波形与报告。
+默认仅绑定 `127.0.0.1`（本机）；可用 `VF_PORT` / `VF_HOST` 环境变量调整。
+
 ---
 
 ## 项目结构
