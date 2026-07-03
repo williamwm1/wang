@@ -1,0 +1,11 @@
+# Generated artifacts
+output/*
+temp/*
+!output/.gitkeep
+!temp/.gitkeep
+
+# RNNoise models are user-supplied
+assets/*.rnnn
+
+__pycache__/
+*.pyc
