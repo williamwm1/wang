@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+/* 手动切换的深色模式：html.dark 生效，默认浅色 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f7f7f5;
+  --surface: #ffffff;
+  --surface-2: #fcfcfb;
+  --border: #e7e6e2;
+  --foreground: #17170f;
+  --text-secondary: #52514e;
+  --text-muted: #8a8880;
+  --accent: #2a78d6;
+  --accent-soft: #e8f1fc;
+  /* 图表色（经过 CVD 校验的参考色板） */
+  --series-1: #2a78d6;
+  --series-2: #1baf7a;
+  --series-3: #eda100;
+  --status-good: #0ca30c;
+  --status-warning: #fab219;
+  --status-critical: #d03b3b;
+}
+
+.dark {
+  --background: #121211;
+  --surface: #1a1a19;
+  --surface-2: #202020;
+  --border: #33332f;
+  --foreground: #f2f1ea;
+  --text-secondary: #c3c2b7;
+  --text-muted: #8a897f;
+  --accent: #3987e5;
+  --accent-soft: #16283d;
+  --series-1: #3987e5;
+  --series-2: #199e70;
+  --series-3: #c98500;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--border);
+  --color-foreground: var(--foreground);
+  --color-secondary: var(--text-secondary);
+  --color-muted: var(--text-muted);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC",
+    sans-serif;
+}
+
+html {
+  color-scheme: light;
+}
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}

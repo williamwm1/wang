@@ -186,9 +186,56 @@ async function listInventory() {
   }));
 }
 
+/* ---------- Demo mode (sample data, no Square calls) ---------- */
+const DEMO_INVOICES = [
+  {
+    id: 'demo-1', invoice_number: '1024', status: 'PAID', order_id: 'o1',
+    customer_name: '张伟 / Wei Zhang', customer_email: 'wei@example.com',
+    created_at: '2026-06-15T02:10:00Z', currency: 'USD',
+    total: 48000, total_paid: 48000, amount_due: 0,
+    items: [
+      { uid: 'i1', name: '橡木餐桌 / Oak dining table', quantity: 1, variation_name: '1.6m', catalog_object_id: 'c1', total: 32000 },
+      { uid: 'i2', name: '餐椅 / Dining chair', quantity: 4, variation_name: '胡桃色', catalog_object_id: 'c2', total: 16000 },
+    ],
+  },
+  {
+    id: 'demo-2', invoice_number: '1025', status: 'PARTIALLY_PAID', order_id: 'o2',
+    customer_name: '李娜 / Na Li', customer_email: 'na@example.com',
+    created_at: '2026-06-16T06:30:00Z', currency: 'USD',
+    total: 26000, total_paid: 13000, amount_due: 13000,
+    items: [
+      { uid: 'i3', name: '布艺沙发 / Fabric sofa', quantity: 1, variation_name: '三人位', catalog_object_id: 'c3', total: 26000 },
+    ],
+  },
+  {
+    id: 'demo-3', invoice_number: '1026', status: 'UNPAID', order_id: 'o3',
+    customer_name: '王芳 / Fang Wang', customer_email: '',
+    created_at: '2026-06-17T01:00:00Z', currency: 'USD',
+    total: 9000, total_paid: 0, amount_due: 9000,
+    items: [
+      { uid: 'i4', name: '落地灯 / Floor lamp', quantity: 2, variation_name: '', catalog_object_id: 'c4', total: 6000 },
+      { uid: 'i5', name: '地毯 / Area rug', quantity: 1, variation_name: '2x3m', catalog_object_id: 'c5', total: 3000 },
+    ],
+  },
+];
+const DEMO_INVENTORY = [
+  { catalog_object_id: 'c1', name: '橡木餐桌 / Oak dining table - 1.6m', quantity: 5 },
+  { catalog_object_id: 'c2', name: '餐椅 / Dining chair - 胡桃色', quantity: 23 },
+  { catalog_object_id: 'c3', name: '布艺沙发 / Fabric sofa - 三人位', quantity: 0 },
+  { catalog_object_id: 'c4', name: '落地灯 / Floor lamp', quantity: 12 },
+  { catalog_object_id: 'c5', name: '地毯 / Area rug - 2x3m', quantity: 7 },
+];
+
 module.exports = {
   SquareError,
-  listInvoicesDetailed,
-  getInvoiceDetailed,
-  listInventory,
+  listInvoicesDetailed: config.demo
+    ? async () => ({ invoices: DEMO_INVOICES.map((i) => ({ ...i })), cursor: null })
+    : listInvoicesDetailed,
+  getInvoiceDetailed: config.demo
+    ? async (id) => {
+        const found = DEMO_INVOICES.find((i) => i.id === id) || DEMO_INVOICES[0];
+        return { ...found };
+      }
+    : getInvoiceDetailed,
+  listInventory: config.demo ? async () => DEMO_INVENTORY.map((i) => ({ ...i })) : listInventory,
 };

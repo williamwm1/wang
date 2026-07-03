@@ -1,0 +1,81 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Comment {
+  id                           String   @id @default(cuid())
+  rawText                      String
+  sourcePlatform               String
+  sourceUrl                    String?
+  authorName                   String?
+  publishedAt                  DateTime?
+  importedAt                   DateTime @default(now())
+  language                     String   @default("zh")
+
+  isPainPoint                  Boolean  @default(false)
+  painType                     String?
+  targetUser                   String?
+  userScenario                 String?
+  jobToBeDone                  String?
+  currentWorkaround            String?
+  painDescription              String?
+  painSeverityScore            Int      @default(0)
+  paymentSignalScore           Int      @default(0)
+  softwareFitScore             Int      @default(0)
+  aiAutomationFitScore         Int      @default(0)
+  summary                      String?
+  recommendedSolutionDirection String?
+
+  // internal key produced by the analyzer, drives clustering
+  topicKey                     String?
+
+  cluster                      Cluster? @relation(fields: [clusterId], references: [id])
+  clusterId                    String?
+
+  createdAt                    DateTime @default(now())
+  updatedAt                    DateTime @updatedAt
+
+  @@index([clusterId])
+  @@index([importedAt])
+}
+
+model Cluster {
+  id                          String   @id @default(cuid())
+  // stable clustering key (topicKey or painType+targetUser fallback)
+  key                         String   @unique
+  title                       String
+  summary                     String
+  targetUser                  String
+  industry                    String   @default("通用")
+  painType                    String   @default("流程复杂")
+  painDescription             String
+  currentWorkaround           String
+  recommendedProductDirection String
+  suggestedMvp                String
+  suggestedBusinessModel      String
+  riskNotes                   String
+
+  totalScore                  Int      @default(0)
+  painIntensityScore          Int      @default(0)
+  frequencyScore              Int      @default(0)
+  paymentSignalScore          Int      @default(0)
+  softwareFitScore            Int      @default(0)
+  aiAutomationFitScore        Int      @default(0)
+  solutionGapScore            Int      @default(0)
+  // JSON string: per-dimension explanation lines
+  scoreExplanation            String   @default("[]")
+
+  trendStatus                 String   @default("新出现") // 上升 / 平稳 / 新出现
+  sourceCount                 Int      @default(0)
+  commentCount                Int      @default(0)
+
+  comments                    Comment[]
+
+  createdAt                   DateTime @default(now())
+  updatedAt                   DateTime @updatedAt
+}
