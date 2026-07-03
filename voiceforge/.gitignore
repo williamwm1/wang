@@ -7,5 +7,9 @@ temp/*
 # RNNoise models are user-supplied
 assets/*.rnnn
 
+# Bundled binaries + build output (produced by packaging/build.py)
+bin/*
+!bin/.gitkeep
+
 __pycache__/
 *.pyc

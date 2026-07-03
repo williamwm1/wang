@@ -98,6 +98,11 @@ python -m voiceforge.app
 ```
 拖入视频 → 点 Analyze → Repair → Export。日志与报告实时显示。
 
+> **要双击运行 / 打包成 .exe / .app？** 见 [`packaging/README.md`](packaging/README.md)：
+> 提供免编译的双击启动脚本（`run.bat` / `run.command`）和一条命令产出自带 FFmpeg
+> 的独立程序（`python voiceforge/packaging/build.py`）。
+> 注意远程/云端服务器无法显示桌面窗口，桌面版需在本机运行。
+
 ### 命令行（无显示器 / 服务器 / 批处理）
 ```bash
 python -m voiceforge.cli input.mp4 -o output_dir --waveforms

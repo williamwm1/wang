@@ -12,8 +12,10 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import shutil
 import subprocess
+import sys
 import tempfile
 from dataclasses import dataclass, field
 from typing import Callable, List, Optional
@@ -26,8 +28,49 @@ def _which(name: str) -> Optional[str]:
     return shutil.which(name)
 
 
-FFMPEG = _which("ffmpeg") or "ffmpeg"
-FFPROBE = _which("ffprobe") or "ffprobe"
+def _bundle_dirs() -> List[str]:
+    """Candidate directories that may hold a bundled ffmpeg/ffprobe.
+
+    Covers a PyInstaller onefile/onedir layout (``sys._MEIPASS`` and the exe
+    dir) plus a ``bin/`` folder shipped next to the package.
+    """
+    dirs: List[str] = []
+    meipass = getattr(sys, "_MEIPASS", None)
+    if meipass:
+        dirs.append(meipass)
+        dirs.append(os.path.join(meipass, "bin"))
+    if getattr(sys, "frozen", False):
+        dirs.append(os.path.dirname(sys.executable))
+        dirs.append(os.path.join(os.path.dirname(sys.executable), "bin"))
+    here = os.path.dirname(__file__)
+    dirs.append(os.path.join(here, "bin"))
+    return dirs
+
+
+def _find_tool(name: str) -> Optional[str]:
+    """Locate ``ffmpeg``/``ffprobe`` from PATH, a bundle dir, or imageio-ffmpeg."""
+    exe = name + (".exe" if os.name == "nt" else "")
+    # 1) bundled next to the app / inside the PyInstaller archive
+    for d in _bundle_dirs():
+        cand = os.path.join(d, exe)
+        if os.path.isfile(cand) and os.access(cand, os.X_OK):
+            return cand
+    # 2) system PATH
+    p = _which(name)
+    if p:
+        return p
+    # 3) imageio-ffmpeg ships a static ffmpeg binary (ffmpeg only, not ffprobe)
+    if name == "ffmpeg":
+        try:
+            import imageio_ffmpeg  # type: ignore
+            return imageio_ffmpeg.get_ffmpeg_exe()
+        except Exception:
+            pass
+    return None
+
+
+FFMPEG = _find_tool("ffmpeg") or "ffmpeg"
+FFPROBE = _find_tool("ffprobe") or ""
 
 
 class AudioEngineError(RuntimeError):
@@ -35,7 +78,13 @@ class AudioEngineError(RuntimeError):
 
 
 def have_ffmpeg() -> bool:
-    return _which("ffmpeg") is not None and _which("ffprobe") is not None
+    """True when we can process audio.
+
+    ``ffmpeg`` is required; ``ffprobe`` is optional because :func:`probe` can
+    fall back to parsing ``ffmpeg -i`` output when ffprobe is unavailable
+    (e.g. a bundle that only ships the ffmpeg binary).
+    """
+    return bool(_find_tool("ffmpeg"))
 
 
 # --------------------------------------------------------------------------- #
@@ -93,9 +142,16 @@ class MediaInfo:
 
 
 def probe(path: str, log: Logger = _noop) -> MediaInfo:
-    """Return container / stream metadata for ``path`` using ffprobe."""
+    """Return container / stream metadata for ``path``.
+
+    Uses ffprobe when available; otherwise falls back to parsing ``ffmpeg -i``
+    output so a bundle that ships only the ffmpeg binary still works.
+    """
     if not os.path.exists(path):
         raise AudioEngineError(f"File not found: {path}")
+
+    if not FFPROBE:
+        return _probe_with_ffmpeg(path, log=log)
 
     cmd = [
         FFPROBE,
@@ -137,6 +193,46 @@ def probe(path: str, log: Logger = _noop) -> MediaInfo:
     if info.sample_rate == 0 and info.channels == 0 and info.audio_codec == "":
         raise AudioEngineError(f"No audio stream found in {path}")
 
+    return info
+
+
+def _probe_with_ffmpeg(path: str, log: Logger = _noop) -> MediaInfo:
+    """ffprobe-less fallback: parse ``ffmpeg -i`` diagnostic output."""
+    proc = run([FFMPEG, "-hide_banner", "-i", path], log=log, check=False)
+    text = proc.stderr
+    info = MediaInfo(path=path)
+
+    m = re.search(r"Duration:\s*(\d+):(\d+):(\d+\.\d+)", text)
+    if m:
+        h, mm, ss = int(m.group(1)), int(m.group(2)), float(m.group(3))
+        info.duration = h * 3600 + mm * 60 + ss
+
+    for line in text.splitlines():
+        line = line.strip()
+        if not line.startswith("Stream #"):
+            continue
+        if "Video:" in line and "attached pic" not in line:
+            info.has_video = True
+            vm = re.search(r"Video:\s*([a-zA-Z0-9_]+)", line)
+            if vm:
+                info.video_codec = vm.group(1)
+        elif "Audio:" in line:
+            am = re.search(r"Audio:\s*([a-zA-Z0-9_]+)", line)
+            if am:
+                info.audio_codec = am.group(1)
+            sr = re.search(r"(\d+)\s*Hz", line)
+            if sr:
+                info.sample_rate = int(sr.group(1))
+            if "stereo" in line:
+                info.channels = 2
+            elif "mono" in line:
+                info.channels = 1
+            else:
+                ch = re.search(r"(\d+)\s*channels", line)
+                info.channels = int(ch.group(1)) if ch else 1
+
+    if info.sample_rate == 0 and info.channels == 0 and info.audio_codec == "":
+        raise AudioEngineError(f"No audio stream found in {path}")
     return info
 
 
