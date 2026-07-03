@@ -88,6 +88,12 @@ def choose_params(report: AudioReport) -> RepairParams:
 
     # -- de-noise strength scales with detected noise/hiss ---------------- #
     p.denoise_reduction_db = 6.0 + 4.0 * report.noise        # 6..26 dB
+    # Quiet recordings get boosted hard by loudness-normalise, which also lifts
+    # the noise floor — so pre-empt that by de-noising more when a large make-up
+    # gain is coming.  (report.lufs is the source integrated loudness.)
+    gain_needed = p.target_lufs - report.lufs
+    if gain_needed > 10 and report.lufs > -60:
+        p.denoise_reduction_db += min(10.0, (gain_needed - 10.0) * 0.6)
     nf = report.metrics.get("noise_floor_db", -40.0)
     p.denoise_floor_db = max(-80.0, min(-20.0, nf - 3.0))
 
@@ -298,6 +304,70 @@ def _loudnorm_apply(
     return dst
 
 
+def _measure_lufs(path: str) -> Optional[float]:
+    """Integrated loudness of ``path`` via pyloudnorm, or None if unavailable."""
+    try:
+        import numpy as np
+        import soundfile as sf
+        import pyloudnorm as pyln
+        x, sr = sf.read(path, always_2d=False)
+        if x.ndim > 1:
+            x = x.mean(axis=1)
+        if len(x) < int(0.4 * sr):
+            return None
+        val = float(pyln.Meter(sr).integrated_loudness(x.astype("float64")))
+        return val if val == val else None  # guard NaN
+    except Exception:
+        return None
+
+
+def _loudness_trim(path: str, p: RepairParams, log: ae.Logger) -> Optional[float]:
+    """Guarantee the loudness target after loudnorm.
+
+    loudnorm can undershoot the target for very quiet or peaky inputs because it
+    refuses to breach the true-peak ceiling.  We verify the result and, if it is
+    still off by more than 0.3 LU, apply a corrective gain followed by the same
+    true-peak limiter so the final integrated loudness lands on target *without*
+    exceeding -1 dBTP.  Returns the final measured LUFS (or None).
+    """
+    measured = _measure_lufs(path)
+    if measured is None:
+        return None
+    limit_lin = 10 ** (p.limiter_tp_db / 20.0)
+
+    # Iterate: each pass raises RMS via gain and squashes peaks via the limiter.
+    # Because a TP-limited peaky signal only gains part of the applied dB per
+    # pass, a couple of passes are needed to converge on the target.
+    for _ in range(4):
+        delta = p.target_lufs - measured
+        if abs(delta) <= 0.3:
+            break
+        gain = max(-12.0, min(12.0, delta))
+        log(f"Loudness trim: {measured:.1f} -> target {p.target_lufs:.1f} LUFS "
+            f"(applying {gain:+.1f} dB + limiter)")
+        tmp = ae.temp_path("_trim.wav")
+        try:
+            ae.apply_filter_chain(
+                path, tmp,
+                f"volume={gain:.2f}dB,alimiter=level=disabled:limit={limit_lin:.4f}",
+                log=log,
+            )
+            shutil.move(tmp, path)
+        except Exception as exc:
+            log(f"Loudness trim skipped ({exc}).")
+            ae.cleanup([tmp])
+            break
+        new_measured = _measure_lufs(path)
+        if new_measured is None:
+            break
+        # stop if a pass no longer makes meaningful progress (crest-factor wall)
+        if abs(new_measured - measured) < 0.15:
+            measured = new_measured
+            break
+        measured = new_measured
+    return measured
+
+
 # --------------------------------------------------------------------------- #
 # Orchestration
 # --------------------------------------------------------------------------- #
@@ -332,6 +402,11 @@ def repair_wav(
         measured = _loudnorm_measure(processed, params, log)
         log(f"Loudness: normalising to {params.target_lufs} LUFS (pass 2/2)...")
         _loudnorm_apply(processed, dst_wav, params, measured, out_sr, log)
+
+        # verify + corrective trim so quiet/peaky inputs still hit the target
+        final_lufs = _loudness_trim(dst_wav, params, log)
+        if final_lufs is not None:
+            notes.append(f"Final loudness {final_lufs:.1f} LUFS")
 
         return RepairResult(
             output_wav=dst_wav,
