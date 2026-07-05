@@ -1,0 +1,226 @@
+/* ============================================================
+   《AI 开发黑话翻译手册》 · 书籍样式表
+   A4 纵向 · 适合打印 · 三册共用
+   ============================================================ */
+
+:root {
+  --font-sans: "Inter", "Noto Sans CJK SC", "PingFang SC", "Source Han Sans SC", "Microsoft YaHei", sans-serif;
+  --font-mono: "DejaVu Sans Mono", "JetBrains Mono", "SF Mono", Consolas, monospace;
+
+  --bg:        #F7F3EA;
+  --paper:     #FFFDF8;
+  --ink:       #1F1F1F;
+  --gray:      #6F6F6F;
+  --light:     #E8E3D8;
+
+  --orange:    #D9822B;  --orange-bg: #F8EFE4;
+  --blue:      #3A6EA5;  --blue-bg:   #EAF2F8;
+  --green:     #5F8D4E;  --green-bg:  #EDF5EA;
+  --purple:    #7A5C99;  --purple-bg: #F1ECF6;
+}
+
+/* ---------- 分类主题 ---------- */
+.t-orange { --accent: var(--orange); --accent-bg: var(--orange-bg); }
+.t-blue   { --accent: var(--blue);   --accent-bg: var(--blue-bg); }
+.t-green  { --accent: var(--green);  --accent-bg: var(--green-bg); }
+.t-purple { --accent: var(--purple); --accent-bg: var(--purple-bg); }
+
+/* ---------- 页面基底 ---------- */
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.page {
+  position: relative;
+  width: 210mm;
+  height: 297mm;
+  padding: 20mm 22mm 18mm 22mm;
+  background: var(--paper);
+  overflow: hidden;
+  page-break-after: always;
+  break-after: page;
+  display: flex;
+  flex-direction: column;
+}
+.page:last-child { page-break-after: auto; }
+
+code, .mono { font-family: var(--font-mono); }
+
+/* ============================================================
+   封面
+   ============================================================ */
+.cover {
+  background: var(--bg);
+  justify-content: space-between;
+  padding: 34mm 26mm;
+}
+.cover-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.cover-kicker {
+  font-size: 12pt; letter-spacing: .35em; color: var(--gray);
+  text-transform: uppercase; font-weight: 600;
+}
+.cover-geo { position: relative; height: 46mm; margin: 8mm 0; }
+.cover-geo .c1 { position:absolute; width: 42mm; height: 42mm; border-radius: 50%;
+  border: 2px solid var(--accent); left: 0; top: 0; }
+.cover-geo .c2 { position:absolute; width: 26mm; height: 26mm; border-radius: 50%;
+  background: var(--accent-bg); left: 22mm; top: 12mm; }
+.cover-geo .c3 { position:absolute; width: 10mm; height: 10mm; border-radius: 3mm;
+  background: var(--accent); left: 46mm; top: 4mm; transform: rotate(12deg); }
+.cover-title {
+  font-size: 52pt; font-weight: 700; line-height: 1.15; letter-spacing: .01em;
+  color: var(--ink); margin: 0;
+}
+.cover-vol {
+  margin-top: 10mm; font-size: 22pt; font-weight: 600; color: var(--accent);
+}
+.cover-sub {
+  margin-top: 6mm; font-size: 15pt; color: var(--gray); line-height: 1.7; font-weight: 400;
+  max-width: 130mm;
+}
+.cover-foot { display:flex; justify-content: space-between; align-items:flex-end;
+  color: var(--gray); font-size: 11pt; letter-spacing:.05em; }
+.cover-foot .en { font-family: var(--font-sans); }
+
+/* ============================================================
+   内容通用页首/页脚
+   ============================================================ */
+.color-bar { position:absolute; top:0; left:0; right:0; height: 6px; background: var(--accent); }
+
+.pfoot {
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px solid var(--light);
+  display:flex; justify-content: space-between; align-items:center;
+  font-size: 10pt; color: var(--gray); letter-spacing: .04em;
+}
+.pfoot .pnum { font-variant-numeric: tabular-nums; letter-spacing:.25em; }
+
+/* ============================================================
+   通用文字页（版权/使用说明/后记）
+   ============================================================ */
+.doc h1 { font-size: 30pt; font-weight: 700; margin: 2mm 0 2mm; }
+.doc h2 { font-size: 15pt; font-weight: 700; color: var(--accent); margin: 9mm 0 3mm; }
+.doc p, .doc li { font-size: 12.5pt; line-height: 1.85; color: var(--ink); }
+.doc .muted { color: var(--gray); }
+.doc ul { padding-left: 5mm; }
+.doc li { margin-bottom: 2mm; }
+.doc .lead { font-size: 14pt; color: var(--gray); line-height: 1.9; }
+.doc .rule { height:1px; background: var(--light); margin: 7mm 0; border:0; }
+.kicker { font-size: 11pt; letter-spacing:.3em; color: var(--accent); font-weight:600;
+  text-transform: uppercase; }
+
+/* 使用说明：术语页图解 */
+.legend { border: 1px dashed var(--light); border-radius: 14px; padding: 6mm 7mm;
+  background: var(--paper); margin-top: 4mm; }
+.legend-item { display:flex; gap: 4mm; padding: 2.5mm 0; align-items: baseline;
+  border-bottom: 1px solid var(--light); }
+.legend-item:last-child { border-bottom: 0; }
+.legend-item .n { font-family: var(--font-mono); font-size: 11pt; color: var(--accent);
+  min-width: 8mm; font-weight: 700; }
+.legend-item .l { font-weight: 700; font-size: 12pt; min-width: 46mm; }
+.legend-item .d { color: var(--gray); font-size: 11.5pt; }
+
+/* ============================================================
+   目录
+   ============================================================ */
+.toc h1 { font-size: 28pt; font-weight: 700; margin-bottom: 6mm; }
+.toc-cols { columns: 2; column-gap: 12mm; }
+.toc-row { display:flex; align-items: baseline; gap: 3mm; break-inside: avoid;
+  padding: 1.15mm 0; font-size: 10.5pt; }
+.toc-row .idx { font-family: var(--font-mono); color: var(--accent); min-width: 8mm;
+  font-size: 9.5pt; }
+.toc-row .zh { color: var(--ink); font-weight: 500; white-space: nowrap; }
+.toc-row .en { color: var(--gray); font-size: 9pt; white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis; }
+.toc-row .dots { flex: 1; border-bottom: 1px dotted var(--light); transform: translateY(-2px); }
+.toc-row .pg { font-family: var(--font-mono); color: var(--gray); font-size: 9.5pt; }
+
+/* ============================================================
+   术语正文页
+   ============================================================ */
+.term { padding-top: 18mm; }
+
+.term-tag {
+  position: absolute; top: 14mm; right: 22mm;
+  font-size: 11pt; font-weight: 600; color: var(--accent);
+  background: var(--accent-bg); border-radius: 999px; padding: 2mm 5mm;
+  letter-spacing: .08em;
+}
+.term-head { margin-bottom: 5mm; }
+.term-zh { font-size: 38pt; font-weight: 700; line-height: 1.1; margin: 0; letter-spacing:.01em; }
+.term-en { font-size: 15pt; font-weight: 500; color: var(--gray); margin-top: 2mm;
+  letter-spacing: .04em; font-family: var(--font-sans); }
+
+/* 核心解释卡 */
+.core {
+  display:flex; gap: 5mm; align-items: flex-start;
+  background: var(--accent-bg); border-left: 4px solid var(--accent);
+  border-radius: 14px; padding: 6mm 7mm; margin-bottom: 6mm;
+}
+.core .ico { font-size: 26pt; line-height: 1; }
+.core .core-body .lbl { font-size: 10.5pt; font-weight: 700; color: var(--accent);
+  letter-spacing:.1em; margin-bottom: 2mm; }
+.core .core-body .txt { font-size: 20pt; font-weight: 600; line-height: 1.45; color: var(--ink); }
+
+/* 通用模块 */
+.mod { margin-bottom: 4.2mm; }
+.mod .mh { display:flex; align-items:center; gap: 2.5mm; font-size: 12pt; font-weight: 700;
+  color: var(--ink); margin-bottom: 1.5mm; }
+.mod .mh::before { content:""; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); display:inline-block; }
+.mod .mb { font-size: 12.5pt; line-height: 1.7; color: var(--ink); }
+
+/* 双列 需要/不需要 */
+.two { display:flex; gap: 5mm; margin-bottom: 4.2mm; }
+.two .col { flex:1; background: var(--paper); border: 1px solid var(--light);
+  border-radius: 12px; padding: 4mm 4.5mm; }
+.two .col .mh { font-size: 11pt; font-weight:700; margin-bottom: 1.5mm; display:flex; gap:2mm; align-items:center;}
+.two .col.yes .mh { color: var(--green); }
+.two .col.no  .mh { color: var(--orange); }
+.two .col .mh .s { font-size: 12pt; }
+.two .col .mb { font-size: 11.5pt; line-height: 1.6; color: var(--ink); }
+
+/* 告诉 AI 引用块 */
+.tellai {
+  background: #F4F1E8; border: 1px solid var(--light); border-radius: 12px;
+  padding: 4.5mm 5mm; margin-bottom: 4.5mm;
+}
+.tellai .mh { font-size: 11pt; font-weight:700; color: var(--gray); margin-bottom: 2mm;
+  letter-spacing:.06em; }
+.tellai .quote { font-family: var(--font-mono); font-size: 11.5pt; line-height: 1.65;
+  color: var(--ink); background: var(--paper); border-radius: 8px; padding: 3.5mm 4mm;
+  border-left: 3px solid var(--accent); }
+
+/* 记忆口诀 */
+.mnemonic {
+  text-align:center; margin: 2mm 0 1mm; font-size: 15pt; font-weight: 600;
+  color: var(--accent); font-style: italic; line-height: 1.5;
+}
+.mnemonic::before { content: "〝"; font-style: normal; margin-right: 1mm; opacity:.6; }
+.mnemonic::after  { content: "〞"; font-style: normal; margin-left: 1mm; opacity:.6; }
+
+/* ============================================================
+   索引
+   ============================================================ */
+.index h1 { font-size: 28pt; font-weight: 700; margin-bottom: 3mm; }
+.index h2 { font-size: 13pt; color: var(--accent); font-weight:700; margin: 7mm 0 3mm; }
+.idx-cols { columns: 2; column-gap: 12mm; }
+.idx-row { display:flex; align-items: baseline; gap: 2mm; break-inside: avoid;
+  font-size: 10pt; padding: 1mm 0; }
+.idx-row .a { font-weight:500; }
+.idx-row .b { color: var(--gray); font-size: 9pt; }
+.idx-row .dots { flex:1; border-bottom: 1px dotted var(--light); transform: translateY(-2px); }
+.idx-row .pg { font-family: var(--font-mono); color: var(--gray); font-size: 9pt; }

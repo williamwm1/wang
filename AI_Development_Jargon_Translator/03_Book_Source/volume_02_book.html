@@ -1,0 +1,2539 @@
+<link rel="stylesheet" href="styles.css">
+<section class="page cover t-blue">
+  <div class="cover-top">
+    <div class="cover-kicker">AI Development<br>Jargon Translator</div>
+    <div class="cover-kicker" style="text-align:right">卷 2 / 3</div>
+  </div>
+  <div>
+    <div class="cover-geo"><span class="c1"></span><span class="c2"></span><span class="c3"></span></div>
+    <h1 class="cover-title">AI 开发<br>黑话翻译手册</h1>
+    <div class="cover-vol">第二册 ｜ AI 开发与部署</div>
+    <div class="cover-sub">程序员是怎么说的，普通人应该怎么理解。<br>把黑话翻译成人话，再翻译成 AI 能执行的开发需求。</div>
+  </div>
+  <div class="cover-foot">
+    <span>94 个术语 · 一词一页 · 可打印</span>
+    <span class="en">Open Source · CC BY 4.0</span>
+  </div>
+</section>
+<section class="page doc t-blue">
+  <div class="color-bar"></div>
+  <div class="kicker">版权信息 · Colophon</div>
+  <h1>AI 开发黑话翻译手册</h1>
+  <p class="lead">第二册 ｜ AI 开发与部署</p>
+  <hr class="rule">
+  <p><strong>书名</strong><br>AI 开发黑话翻译手册（AI Development Jargon Translator）</p>
+  <p><strong>副标题</strong><br>程序员是怎么说的，普通人应该怎么理解</p>
+  <p><strong>本册</strong><br>第二册 · AI 开发与部署 · 共 94 个术语</p>
+  <p><strong>版本</strong><br>v1.0 · 2026 年</p>
+  <p><strong>许可</strong><br>本手册以 <span class="mono">CC BY 4.0</span> 协议开源，可自由分享、打印、用于学习与教学，注明出处即可。</p>
+  <hr class="rule">
+  <p class="muted">本手册面向完全不懂技术的读者。所有解释都尽量用生活语言，不用黑话解释黑话。它同时是 “AI Product Clarifier” 技能的知识底座：当用户表示 “我不太理解” 时，可引用本手册中的解释。</p>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册</span><span></span></div>
+</section>
+<section class="page doc t-blue">
+  <div class="color-bar"></div>
+  <div class="kicker">使用说明 · How to Read</div>
+  <h1>怎么读这本书</h1>
+  <p class="lead">这不是词典，是翻译器。每一页把一个技术黑话，翻译成你听得懂的话，再翻译成 AI 能执行的开发需求。</p>
+  <p>你不需要从头读到尾。遇到听不懂的词，翻到那一页，看一眼「一句话理解」，通常就够了。想更深入，再往下看例子和用法。</p>
+  <h2>每一页长这样</h2>
+  <div class="legend"><div class="legend-item"><span class="n">①</span><span class="l">分类标签</span><span class="d">页面右上角，标明这个词属于产品 / 开发 / 部署 / AI 等哪一类。</span></div><div class="legend-item"><span class="n">②</span><span class="l">中文术语</span><span class="d">页面最大的字，就是这一页要讲的黑话。</span></div><div class="legend-item"><span class="n">③</span><span class="l">英文术语</span><span class="d">黑话的英文原文，方便你在真实软件里对照。</span></div><div class="legend-item"><span class="n">④</span><span class="l">一句话理解</span><span class="d">整页最重要的一句。看不懂别的，看这句就够。</span></div><div class="legend-item"><span class="n">⑤</span><span class="l">生活中的例子</span><span class="d">用你熟悉的日常事物，帮你秒懂。</span></div><div class="legend-item"><span class="n">⑥</span><span class="l">程序员想表达什么</span><span class="d">这个词在开发里到底指什么。</span></div><div class="legend-item"><span class="n">⑦</span><span class="l">AI 会翻译成什么</span><span class="d">你说人话，AI 实际会去做的开发动作。</span></div><div class="legend-item"><span class="n">⑧</span><span class="l">什么时候需要 / 不需要</span><span class="d">帮你判断这东西你到底要不要。</span></div><div class="legend-item"><span class="n">⑨</span><span class="l">没有它会怎样</span><span class="d">不做的后果，帮你权衡。</span></div><div class="legend-item"><span class="n">⑩</span><span class="l">怎么告诉 AI</span><span class="d">可以直接复制给 AI 的一句话。</span></div><div class="legend-item"><span class="n">⑪</span><span class="l">记忆口诀</span><span class="d">一句话记住它。</span></div></div>
+  <p class="muted" style="margin-top:5mm">翻译逻辑：<strong>程序员语言 → 普通人语言 → AI 能执行的开发需求语言</strong>。</p>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册</span><span>使用说明</span></div>
+</section>
+<section class="page toc t-blue">
+  <div class="color-bar"></div>
+  <div class="kicker">目录 · Contents</div><h1>目录</h1>
+  <div class="toc-cols"><div class="toc-row"><span class="idx">01</span><span class="zh">前端</span><span class="en">Frontend</span><span class="dots"></span><span class="pg">001</span></div><div class="toc-row"><span class="idx">02</span><span class="zh">后端</span><span class="en">Backend</span><span class="dots"></span><span class="pg">002</span></div><div class="toc-row"><span class="idx">03</span><span class="zh">全栈</span><span class="en">Full-stack</span><span class="dots"></span><span class="pg">003</span></div><div class="toc-row"><span class="idx">04</span><span class="zh">客户端</span><span class="en">Client</span><span class="dots"></span><span class="pg">004</span></div><div class="toc-row"><span class="idx">05</span><span class="zh">服务端</span><span class="en">Server-side</span><span class="dots"></span><span class="pg">005</span></div><div class="toc-row"><span class="idx">06</span><span class="zh">数据库</span><span class="en">Database</span><span class="dots"></span><span class="pg">006</span></div><div class="toc-row"><span class="idx">07</span><span class="zh">本地存储</span><span class="en">Local Storage</span><span class="dots"></span><span class="pg">007</span></div><div class="toc-row"><span class="idx">08</span><span class="zh">云端存储</span><span class="en">Cloud Storage</span><span class="dots"></span><span class="pg">008</span></div><div class="toc-row"><span class="idx">09</span><span class="zh">SQLite</span><span class="en">SQLite</span><span class="dots"></span><span class="pg">009</span></div><div class="toc-row"><span class="idx">10</span><span class="zh">Supabase</span><span class="en">Supabase</span><span class="dots"></span><span class="pg">010</span></div><div class="toc-row"><span class="idx">11</span><span class="zh">PostgreSQL</span><span class="en">PostgreSQL</span><span class="dots"></span><span class="pg">011</span></div><div class="toc-row"><span class="idx">12</span><span class="zh">MySQL</span><span class="en">MySQL</span><span class="dots"></span><span class="pg">012</span></div><div class="toc-row"><span class="idx">13</span><span class="zh">Redis</span><span class="en">Redis</span><span class="dots"></span><span class="pg">013</span></div><div class="toc-row"><span class="idx">14</span><span class="zh">Schema</span><span class="en">Schema</span><span class="dots"></span><span class="pg">014</span></div><div class="toc-row"><span class="idx">15</span><span class="zh">数据表</span><span class="en">Table</span><span class="dots"></span><span class="pg">015</span></div><div class="toc-row"><span class="idx">16</span><span class="zh">字段</span><span class="en">Field / Column</span><span class="dots"></span><span class="pg">016</span></div><div class="toc-row"><span class="idx">17</span><span class="zh">记录</span><span class="en">Record / Row</span><span class="dots"></span><span class="pg">017</span></div><div class="toc-row"><span class="idx">18</span><span class="zh">查询</span><span class="en">Query</span><span class="dots"></span><span class="pg">018</span></div><div class="toc-row"><span class="idx">19</span><span class="zh">缓存</span><span class="en">Cache</span><span class="dots"></span><span class="pg">019</span></div><div class="toc-row"><span class="idx">20</span><span class="zh">文件上传</span><span class="en">File Upload</span><span class="dots"></span><span class="pg">020</span></div><div class="toc-row"><span class="idx">21</span><span class="zh">对象存储</span><span class="en">Object Storage</span><span class="dots"></span><span class="pg">021</span></div><div class="toc-row"><span class="idx">22</span><span class="zh">服务器</span><span class="en">Server</span><span class="dots"></span><span class="pg">022</span></div><div class="toc-row"><span class="idx">23</span><span class="zh">云服务器</span><span class="en">Cloud Server</span><span class="dots"></span><span class="pg">023</span></div><div class="toc-row"><span class="idx">24</span><span class="zh">Serverless</span><span class="en">Serverless</span><span class="dots"></span><span class="pg">024</span></div><div class="toc-row"><span class="idx">25</span><span class="zh">部署</span><span class="en">Deploy</span><span class="dots"></span><span class="pg">025</span></div><div class="toc-row"><span class="idx">26</span><span class="zh">上线</span><span class="en">Go Live</span><span class="dots"></span><span class="pg">026</span></div><div class="toc-row"><span class="idx">27</span><span class="zh">生产环境</span><span class="en">Production</span><span class="dots"></span><span class="pg">027</span></div><div class="toc-row"><span class="idx">28</span><span class="zh">测试环境</span><span class="en">Staging</span><span class="dots"></span><span class="pg">028</span></div><div class="toc-row"><span class="idx">29</span><span class="zh">开发环境</span><span class="en">Development</span><span class="dots"></span><span class="pg">029</span></div><div class="toc-row"><span class="idx">30</span><span class="zh">域名</span><span class="en">Domain</span><span class="dots"></span><span class="pg">030</span></div><div class="toc-row"><span class="idx">31</span><span class="zh">DNS</span><span class="en">DNS</span><span class="dots"></span><span class="pg">031</span></div><div class="toc-row"><span class="idx">32</span><span class="zh">CDN</span><span class="en">CDN</span><span class="dots"></span><span class="pg">032</span></div><div class="toc-row"><span class="idx">33</span><span class="zh">Cloudflare</span><span class="en">Cloudflare</span><span class="dots"></span><span class="pg">033</span></div><div class="toc-row"><span class="idx">34</span><span class="zh">Vercel</span><span class="en">Vercel</span><span class="dots"></span><span class="pg">034</span></div><div class="toc-row"><span class="idx">35</span><span class="zh">Netlify</span><span class="en">Netlify</span><span class="dots"></span><span class="pg">035</span></div><div class="toc-row"><span class="idx">36</span><span class="zh">Docker</span><span class="en">Docker</span><span class="dots"></span><span class="pg">036</span></div><div class="toc-row"><span class="idx">37</span><span class="zh">容器</span><span class="en">Container</span><span class="dots"></span><span class="pg">037</span></div><div class="toc-row"><span class="idx">38</span><span class="zh">镜像</span><span class="en">Image</span><span class="dots"></span><span class="pg">038</span></div><div class="toc-row"><span class="idx">39</span><span class="zh">HTTPS</span><span class="en">HTTPS</span><span class="dots"></span><span class="pg">039</span></div><div class="toc-row"><span class="idx">40</span><span class="zh">SSL</span><span class="en">SSL/TLS</span><span class="dots"></span><span class="pg">040</span></div><div class="toc-row"><span class="idx">41</span><span class="zh">证书</span><span class="en">Certificate</span><span class="dots"></span><span class="pg">041</span></div><div class="toc-row"><span class="idx">42</span><span class="zh">端口</span><span class="en">Port</span><span class="dots"></span><span class="pg">042</span></div><div class="toc-row"><span class="idx">43</span><span class="zh">公网</span><span class="en">Public Network</span><span class="dots"></span><span class="pg">043</span></div><div class="toc-row"><span class="idx">44</span><span class="zh">内网</span><span class="en">Private Network</span><span class="dots"></span><span class="pg">044</span></div><div class="toc-row"><span class="idx">45</span><span class="zh">IP</span><span class="en">IP Address</span><span class="dots"></span><span class="pg">045</span></div><div class="toc-row"><span class="idx">46</span><span class="zh">防火墙</span><span class="en">Firewall</span><span class="dots"></span><span class="pg">046</span></div><div class="toc-row"><span class="idx">47</span><span class="zh">代理</span><span class="en">Proxy</span><span class="dots"></span><span class="pg">047</span></div></div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册</span><span>目录</span></div>
+</section>
+<section class="page toc t-blue">
+  <div class="color-bar"></div>
+  <div class="kicker">目录 · Contents（续）</div><h1>目录 <span style="font-size:15pt;color:var(--gray)">（续）</span></h1>
+  <div class="toc-cols"><div class="toc-row"><span class="idx">48</span><span class="zh">Nginx</span><span class="en">Nginx</span><span class="dots"></span><span class="pg">048</span></div><div class="toc-row"><span class="idx">49</span><span class="zh">API</span><span class="en">API</span><span class="dots"></span><span class="pg">049</span></div><div class="toc-row"><span class="idx">50</span><span class="zh">接口</span><span class="en">Interface</span><span class="dots"></span><span class="pg">050</span></div><div class="toc-row"><span class="idx">51</span><span class="zh">REST</span><span class="en">REST API</span><span class="dots"></span><span class="pg">051</span></div><div class="toc-row"><span class="idx">52</span><span class="zh">GraphQL</span><span class="en">GraphQL</span><span class="dots"></span><span class="pg">052</span></div><div class="toc-row"><span class="idx">53</span><span class="zh">Webhook</span><span class="en">Webhook</span><span class="dots"></span><span class="pg">053</span></div><div class="toc-row"><span class="idx">54</span><span class="zh">JSON</span><span class="en">JSON</span><span class="dots"></span><span class="pg">054</span></div><div class="toc-row"><span class="idx">55</span><span class="zh">SDK</span><span class="en">SDK</span><span class="dots"></span><span class="pg">055</span></div><div class="toc-row"><span class="idx">56</span><span class="zh">环境变量</span><span class="en">Environment Variable</span><span class="dots"></span><span class="pg">056</span></div><div class="toc-row"><span class="idx">57</span><span class="zh">日志</span><span class="en">Log</span><span class="dots"></span><span class="pg">057</span></div><div class="toc-row"><span class="idx">58</span><span class="zh">监控</span><span class="en">Monitoring</span><span class="dots"></span><span class="pg">058</span></div><div class="toc-row"><span class="idx">59</span><span class="zh">错误追踪</span><span class="en">Error Tracking</span><span class="dots"></span><span class="pg">059</span></div><div class="toc-row"><span class="idx">60</span><span class="zh">备份</span><span class="en">Backup</span><span class="dots"></span><span class="pg">060</span></div><div class="toc-row"><span class="idx">61</span><span class="zh">恢复</span><span class="en">Restore</span><span class="dots"></span><span class="pg">061</span></div><div class="toc-row"><span class="idx">62</span><span class="zh">认证</span><span class="en">Authentication</span><span class="dots"></span><span class="pg">062</span></div><div class="toc-row"><span class="idx">63</span><span class="zh">授权</span><span class="en">Authorization</span><span class="dots"></span><span class="pg">063</span></div><div class="toc-row"><span class="idx">64</span><span class="zh">Token</span><span class="en">Token</span><span class="dots"></span><span class="pg">064</span></div><div class="toc-row"><span class="idx">65</span><span class="zh">Cookie</span><span class="en">Cookie</span><span class="dots"></span><span class="pg">065</span></div><div class="toc-row"><span class="idx">66</span><span class="zh">Session</span><span class="en">Session</span><span class="dots"></span><span class="pg">066</span></div><div class="toc-row"><span class="idx">67</span><span class="zh">OAuth</span><span class="en">OAuth</span><span class="dots"></span><span class="pg">067</span></div><div class="toc-row"><span class="idx">68</span><span class="zh">JWT</span><span class="en">JWT</span><span class="dots"></span><span class="pg">068</span></div><div class="toc-row"><span class="idx">69</span><span class="zh">邮件服务</span><span class="en">Email Service</span><span class="dots"></span><span class="pg">069</span></div><div class="toc-row"><span class="idx">70</span><span class="zh">短信服务</span><span class="en">SMS Service</span><span class="dots"></span><span class="pg">070</span></div><div class="toc-row"><span class="idx">71</span><span class="zh">支付接口</span><span class="en">Payment Gateway</span><span class="dots"></span><span class="pg">071</span></div><div class="toc-row"><span class="idx">72</span><span class="zh">定时任务</span><span class="en">Scheduled Task</span><span class="dots"></span><span class="pg">072</span></div><div class="toc-row"><span class="idx">73</span><span class="zh">Cron</span><span class="en">Cron</span><span class="dots"></span><span class="pg">073</span></div><div class="toc-row"><span class="idx">74</span><span class="zh">队列</span><span class="en">Queue</span><span class="dots"></span><span class="pg">074</span></div><div class="toc-row"><span class="idx">75</span><span class="zh">消息队列</span><span class="en">Message Queue</span><span class="dots"></span><span class="pg">075</span></div><div class="toc-row"><span class="idx">76</span><span class="zh">限流</span><span class="en">Rate Limiting</span><span class="dots"></span><span class="pg">076</span></div><div class="toc-row"><span class="idx">77</span><span class="zh">负载均衡</span><span class="en">Load Balancing</span><span class="dots"></span><span class="pg">077</span></div><div class="toc-row"><span class="idx">78</span><span class="zh">CI</span><span class="en">Continuous Integration</span><span class="dots"></span><span class="pg">078</span></div><div class="toc-row"><span class="idx">79</span><span class="zh">CD</span><span class="en">Continuous Delivery</span><span class="dots"></span><span class="pg">079</span></div><div class="toc-row"><span class="idx">80</span><span class="zh">构建</span><span class="en">Build</span><span class="dots"></span><span class="pg">080</span></div><div class="toc-row"><span class="idx">81</span><span class="zh">打包</span><span class="en">Bundle / Package</span><span class="dots"></span><span class="pg">081</span></div><div class="toc-row"><span class="idx">82</span><span class="zh">编译</span><span class="en">Compile</span><span class="dots"></span><span class="pg">082</span></div><div class="toc-row"><span class="idx">83</span><span class="zh">依赖</span><span class="en">Dependency</span><span class="dots"></span><span class="pg">083</span></div><div class="toc-row"><span class="idx">84</span><span class="zh">包管理器</span><span class="en">Package Manager</span><span class="dots"></span><span class="pg">084</span></div><div class="toc-row"><span class="idx">85</span><span class="zh">Node.js</span><span class="en">Node.js</span><span class="dots"></span><span class="pg">085</span></div><div class="toc-row"><span class="idx">86</span><span class="zh">Python</span><span class="en">Python</span><span class="dots"></span><span class="pg">086</span></div><div class="toc-row"><span class="idx">87</span><span class="zh">Next.js</span><span class="en">Next.js</span><span class="dots"></span><span class="pg">087</span></div><div class="toc-row"><span class="idx">88</span><span class="zh">React</span><span class="en">React</span><span class="dots"></span><span class="pg">088</span></div><div class="toc-row"><span class="idx">89</span><span class="zh">Vue</span><span class="en">Vue</span><span class="dots"></span><span class="pg">089</span></div><div class="toc-row"><span class="idx">90</span><span class="zh">CLI</span><span class="en">Command-Line Interface</span><span class="dots"></span><span class="pg">090</span></div><div class="toc-row"><span class="idx">91</span><span class="zh">终端</span><span class="en">Terminal</span><span class="dots"></span><span class="pg">091</span></div><div class="toc-row"><span class="idx">92</span><span class="zh">命令行</span><span class="en">Command Line</span><span class="dots"></span><span class="pg">092</span></div><div class="toc-row"><span class="idx">93</span><span class="zh">README</span><span class="en">README</span><span class="dots"></span><span class="pg">093</span></div><div class="toc-row"><span class="idx">94</span><span class="zh">License</span><span class="en">License</span><span class="dots"></span><span class="pg">094</span></div></div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册</span><span>目录</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">前端</h2>
+    <div class="term-en">Frontend</div>
+  </div>
+  <div class="core">
+    <div class="ico">🖼️</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">用户能看见、能点的那一面。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">餐厅里客人坐的用餐区，看得见摸得着。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">浏览器里负责界面和交互的部分。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">用 HTML/CSS 和 React 等做出用户可见的界面。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">任何有界面的产品。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">纯后台脚本、无界面时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">用户没有能看能操作的界面。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我做前端界面，展示__、让用户能点__。</div></div>
+  <div class="mnemonic">前端，是用户看见的那半边。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">001</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">后端</h2>
+    <div class="term-en">Backend</div>
+  </div>
+  <div class="core">
+    <div class="ico">🧱</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">藏在背后、干真正逻辑活儿的那一面。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">餐厅后厨，客人看不见，饭菜都在这做。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">负责数据处理、业务逻辑的服务器程序。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">写服务器代码处理数据、规则和存储。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">涉及数据保存、账号、计算逻辑时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">纯静态展示、无逻辑时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">界面是空壳，点了没有任何真实结果。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我做后端，负责处理__并把数据存起来。</div></div>
+  <div class="mnemonic">后端，是幕后干活的那半边。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">002</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">全栈</h2>
+    <div class="term-en">Full-stack</div>
+  </div>
+  <div class="core">
+    <div class="ico">🥞</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">前端后端一个人全包。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">一个师傅既管点菜又管掌勺。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">同时负责界面和服务器逻辑的能力。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">从界面到数据一整套一起做。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">小项目、一人或 AI 全包时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">大团队分工明确时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">两头对接不上，做出半拉子。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我从前端到后端做一整套能用的__。</div></div>
+  <div class="mnemonic">一个人，通吃两头。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">003</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">客户端</h2>
+    <div class="term-en">Client</div>
+  </div>
+  <div class="core">
+    <div class="ico">📱</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">装在你设备上、由你这边运行的那一端。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">你手机里那个 App 就是客户端。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">运行在用户设备上、发起请求的一方。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">开发在用户设备上运行的应用界面。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">要做手机/桌面应用时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">纯网页、无独立应用时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">用户没有属于自己设备上的入口。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我做一个客户端 App，用户装在手机上用。</div></div>
+  <div class="mnemonic">客户端，是你手里那一端。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">004</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">服务端</h2>
+    <div class="term-en">Server-side</div>
+  </div>
+  <div class="core">
+    <div class="ico">🗄️</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">远在机房、替所有人干活的那一端。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">银行的总系统，所有网点都连它。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">集中处理请求和数据的一方。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">把核心逻辑放到服务器统一处理。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">多人共享数据、需集中处理时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">纯本地、不联网时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">每台设备各算各的，数据对不上。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">把__的逻辑放到服务端统一处理。</div></div>
+  <div class="mnemonic">服务端，是替大家干活的那一端。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">005</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">数据</span>
+  <div class="term-head">
+    <h2 class="term-zh">数据库</h2>
+    <div class="term-en">Database</div>
+  </div>
+  <div class="core">
+    <div class="ico">🗃️</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">你希望下次打开时，之前的内容还在。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">微信聊天记录不会因为关掉微信就消失。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">有组织地长期保存数据的系统。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">需要数据持久化，可能用 SQLite、Supabase 或数据库。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">任何要“记住”数据的功能。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">数据用完即弃、无需保存时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">一关软件，用户的数据全没了。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">我需要把__数据存起来，关掉再打开还在。</div></div>
+  <div class="mnemonic">数据库，是不会忘事的仓库。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 数据</span><span class="pnum">006</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">数据</span>
+  <div class="term-head">
+    <h2 class="term-zh">本地存储</h2>
+    <div class="term-en">Local Storage</div>
+  </div>
+  <div class="core">
+    <div class="ico">💾</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">把数据存在用户自己设备上。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">手机便签存在手机里，不联网也在。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">数据保存在客户端本地的方式。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">把数据存到浏览器或设备本地。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">数据只属于本机、无需同步时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">多设备要同步数据时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">换台设备数据就没了。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">把__存在用户本地就行，不用上传服务器。</div></div>
+  <div class="mnemonic">存在自己手里，快但带不走。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 数据</span><span class="pnum">007</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">数据</span>
+  <div class="term-head">
+    <h2 class="term-zh">云端存储</h2>
+    <div class="term-en">Cloud Storage</div>
+  </div>
+  <div class="core">
+    <div class="ico">☁️</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">把数据存在网上，换设备也能拿到。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">照片存网盘，换手机登录还在。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">数据保存在远程服务器的方式。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">把数据存到云端数据库或对象存储。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">要多设备同步、防丢失时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">纯本地小工具时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">换设备或丢设备，数据就找不回。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">把__存到云端，让用户换设备也能看到。</div></div>
+  <div class="mnemonic">存在云上，走到哪拿到哪。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 数据</span><span class="pnum">008</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">数据</span>
+  <div class="term-head">
+    <h2 class="term-zh">SQLite</h2>
+    <div class="term-en">SQLite</div>
+  </div>
+  <div class="core">
+    <div class="ico">📦</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">一个装进单个文件里的小型数据库。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">像一本随身笔记本，轻便、随手就能用。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">无需单独服务、以文件形式运行的数据库。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">用 SQLite 做轻量本地数据存储。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">小项目、单机、数据量不大时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">多人高并发、海量数据时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">小项目被迫上重型数据库，白折腾。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">用 SQLite 存__就行，够用又简单。</div></div>
+  <div class="mnemonic">一个文件，就是一个小数据库。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 数据</span><span class="pnum">009</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">数据</span>
+  <div class="term-head">
+    <h2 class="term-zh">Supabase</h2>
+    <div class="term-en">Supabase</div>
+  </div>
+  <div class="core">
+    <div class="ico">⚡</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">开箱即用的云数据库加后端套件。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">像即插即用的“后端全家桶”，省去自己搭。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">提供数据库、认证、存储的一体化后端服务。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">用 Supabase 快速搞定数据库、登录和存储。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">想快速有个能用的后端时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">需要高度定制的复杂后端时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">自己从零搭后端，慢且容易出错。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">用 Supabase 帮我搞定数据库和用户登录。</div></div>
+  <div class="mnemonic">后端全家桶，拿来就用。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 数据</span><span class="pnum">010</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">数据</span>
+  <div class="term-head">
+    <h2 class="term-zh">PostgreSQL</h2>
+    <div class="term-en">PostgreSQL</div>
+  </div>
+  <div class="core">
+    <div class="ico">🐘</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">功能强大、正经可靠的大型数据库。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">像一座结构严谨的大仓库，能装能管。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">成熟稳定、功能丰富的关系型数据库。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">用 PostgreSQL 做正式、可扩展的数据存储。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">数据重要、要长期可靠时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">只是小玩具项目时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">选了太简陋的存储，长大后扛不住。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">用 PostgreSQL 存我们的核心数据。</div></div>
+  <div class="mnemonic">正经数据，交给正经数据库。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 数据</span><span class="pnum">011</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">数据</span>
+  <div class="term-head">
+    <h2 class="term-zh">MySQL</h2>
+    <div class="term-en">MySQL</div>
+  </div>
+  <div class="core">
+    <div class="ico">🐬</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">最流行的老牌关系型数据库之一。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">像用了很多年、大家都会用的老仓库。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">广泛使用、生态成熟的关系型数据库。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">用 MySQL 做通用数据存储。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">常规网站、生态成熟需求时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">极简单机小工具时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">遇到问题时找不到成熟方案（其实很少）。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">用 MySQL 来存我们的数据。</div></div>
+  <div class="mnemonic">老牌好用，用的人多。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 数据</span><span class="pnum">012</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">数据</span>
+  <div class="term-head">
+    <h2 class="term-zh">Redis</h2>
+    <div class="term-en">Redis</div>
+  </div>
+  <div class="core">
+    <div class="ico">🚄</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">极快的临时数据存放处。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">像桌上的便签，随手记、拿得飞快，但不长久。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">内存级、高速读写的键值存储。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">用 Redis 做缓存或临时高速数据。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">要极快读写、临时数据时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">要长期可靠保存时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">热点数据每次都慢慢查，系统卡。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">用 Redis 缓存__，让访问更快。</div></div>
+  <div class="mnemonic">快是它的命，久不是它的活。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 数据</span><span class="pnum">013</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">Schema</h2>
+    <div class="term-en">Schema</div>
+  </div>
+  <div class="core">
+    <div class="ico">📐</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">数据长什么样、有哪些字段的设计图。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">填表前先定好表格有哪几栏。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">数据结构的定义和约束。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">先定义好数据表结构再存数据。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">设计数据怎么存时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">数据结构极简、临时用时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">数据乱七八糟，存进去取不出。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我设计一下__数据的结构（有哪些字段）。</div></div>
+  <div class="mnemonic">先画好格子，再往里填。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">014</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">数据</span>
+  <div class="term-head">
+    <h2 class="term-zh">数据表</h2>
+    <div class="term-en">Table</div>
+  </div>
+  <div class="core">
+    <div class="ico">🧾</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">数据库里的一张表格，一类东西存一张。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">Excel 里“客户表”“订单表”各是一张。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">存储同类数据的结构化表格。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">为每类数据建一张表并定义列。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">有多类数据要分开存时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">只有极少数据时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">各类数据混在一起，乱成一团。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我建一张__表，用来存所有的__。</div></div>
+  <div class="mnemonic">一类东西，存一张表。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 数据</span><span class="pnum">015</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">数据</span>
+  <div class="term-head">
+    <h2 class="term-zh">字段</h2>
+    <div class="term-en">Field / Column</div>
+  </div>
+  <div class="core">
+    <div class="ico">🏷️</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">表格里的一栏，代表一种信息。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">通讯录里“姓名”“电话”各是一栏。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">数据表中的一列属性。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">为每条数据定义要记录的属性列。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">设计一条数据要记什么时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">结构极简时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">该记的信息漏了，取不到。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">每条__要记录这些字段：__、__、__。</div></div>
+  <div class="mnemonic">字段，是表里的一栏。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 数据</span><span class="pnum">016</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">数据</span>
+  <div class="term-head">
+    <h2 class="term-zh">记录</h2>
+    <div class="term-en">Record / Row</div>
+  </div>
+  <div class="core">
+    <div class="ico">📄</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">表格里的一行，代表一条具体数据。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">通讯录里“张三 138…”就是一条记录。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">数据表中的一行数据。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">每新增一条数据就多一行记录。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">谈单条具体数据时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">谈结构而非数据时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">分不清一条条具体数据。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">每次用户__，就新增一条记录。</div></div>
+  <div class="mnemonic">记录，是表里的一行。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 数据</span><span class="pnum">017</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">查询</h2>
+    <div class="term-en">Query</div>
+  </div>
+  <div class="core">
+    <div class="ico">🔎</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">向数据库问“我要的数据在哪”。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">去仓库说“把所有红色的鞋拿给我”。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">从数据库按条件取出数据的操作。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">编写查询语句按条件取数据。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">要从数据里找出符合条件的内容时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">无需读取数据时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">有数据却取不出想要的部分。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我查出所有满足__条件的__。</div></div>
+  <div class="mnemonic">查询，是跟仓库要货。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">018</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">数据</span>
+  <div class="term-head">
+    <h2 class="term-zh">缓存</h2>
+    <div class="term-en">Cache</div>
+  </div>
+  <div class="core">
+    <div class="ico">⚡</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">把常用结果先存一份，下次直接拿，省得重算。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">常用的电话记在便签上，不用每次翻通讯录。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">临时保存结果以加速后续访问。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">对高频数据加缓存减少重复计算。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">同样的数据被反复读取时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">数据每次都变、缓存没意义时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">每次都重算重查，系统又慢又累。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我给__加缓存，重复访问时更快。</div></div>
+  <div class="mnemonic">常用的先存着，下次直接拿。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 数据</span><span class="pnum">019</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">文件上传</h2>
+    <div class="term-en">File Upload</div>
+  </div>
+  <div class="core">
+    <div class="ico">📎</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">让用户把图片、文档等文件传进系统。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">发邮件时点“添加附件”。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">接收并保存用户提交文件的功能。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">实现文件接收、校验与存储。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">用户需要提交图片或文档时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">纯文字、无文件时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">用户没法把文件交给系统。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我加文件上传，让用户能传__文件。</div></div>
+  <div class="mnemonic">让文件也能交进来。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">020</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">数据</span>
+  <div class="term-head">
+    <h2 class="term-zh">对象存储</h2>
+    <div class="term-en">Object Storage</div>
+  </div>
+  <div class="core">
+    <div class="ico">🪣</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">专门存图片、视频等大文件的云仓库。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">像一个超大网盘，专放大件行李。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">面向海量非结构化文件的存储服务。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">用对象存储（如 S3）保存大文件。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">有大量图片视频要存时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">只存少量文字数据时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">大文件塞进数据库，又慢又贵。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">把用户上传的图片视频存到对象存储里。</div></div>
+  <div class="mnemonic">大件行李，专库专放。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 数据</span><span class="pnum">021</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">部署</span>
+  <div class="term-head">
+    <h2 class="term-zh">服务器</h2>
+    <div class="term-en">Server</div>
+  </div>
+  <div class="core">
+    <div class="ico">🖥️</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">一台一直开着、替大家干活的电脑。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">银行大楼里那台从不关机的总机。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">长期运行、响应请求的计算机。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">准备一台服务器来运行后端程序。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">程序要 24 小时在线服务时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">只在自己电脑本地跑时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">你一关电脑，别人就用不了。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">我需要一台服务器来一直运行__。</div></div>
+  <div class="mnemonic">服务器，是永不打烊的电脑。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 部署</span><span class="pnum">022</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">部署</span>
+  <div class="term-head">
+    <h2 class="term-zh">云服务器</h2>
+    <div class="term-en">Cloud Server</div>
+  </div>
+  <div class="core">
+    <div class="ico">🌩️</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">租来的、放在网上的服务器。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">不用买房，直接租一间随时能用的办公室。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">云厂商按需提供的远程服务器。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">在云平台开一台服务器部署程序。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">不想自己买机器、要弹性时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">有自建机房时（少见）。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">自己买机器维护，又贵又麻烦。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我在云上开一台服务器来跑__。</div></div>
+  <div class="mnemonic">服务器也能租，用多少给多少。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 部署</span><span class="pnum">023</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">部署</span>
+  <div class="term-head">
+    <h2 class="term-zh">Serverless</h2>
+    <div class="term-en">Serverless</div>
+  </div>
+  <div class="core">
+    <div class="ico">🎈</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">不用管服务器，代码来了就跑、跑完就走。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">像打车，用的时候才叫，不用养一辆车。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">无需管理服务器、按调用运行的模式。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">把功能拆成函数，按需触发运行。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">流量不稳定、想省心省钱时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">需长时间常驻运行时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">为偶尔的流量白养一台机器。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">用 Serverless 来跑__，按需触发就行。</div></div>
+  <div class="mnemonic">用时才起，用完就散。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 部署</span><span class="pnum">024</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">部署</span>
+  <div class="term-head">
+    <h2 class="term-zh">部署</h2>
+    <div class="term-en">Deploy</div>
+  </div>
+  <div class="core">
+    <div class="ico">🚀</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">把代码搬到线上，让别人能真正访问。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">把做好的菜从后厨端到客人桌上。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">把程序发布到运行环境对外提供服务。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">把代码部署到服务器或平台上线。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">东西做好、要给用户用时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">还在本地开发调试时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">东西只在你电脑里，外人访问不了。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我把__部署上线，让用户能访问。</div></div>
+  <div class="mnemonic">部署，是把菜端上桌。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 部署</span><span class="pnum">025</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">部署</span>
+  <div class="term-head">
+    <h2 class="term-zh">上线</h2>
+    <div class="term-en">Go Live</div>
+  </div>
+  <div class="core">
+    <div class="ico">🟢</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">正式对外开放，谁都能访问。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">餐厅正式开门营业那一刻。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">系统正式对外可用的状态。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">完成部署并对外开放访问。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">测试通过、准备迎接真实用户时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">还没测稳定时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">东西做好了却始终没真正开门。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">测好之后就正式上线，让大家都能用。</div></div>
+  <div class="mnemonic">上线，就是正式开门。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 部署</span><span class="pnum">026</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">部署</span>
+  <div class="term-head">
+    <h2 class="term-zh">生产环境</h2>
+    <div class="term-en">Production</div>
+  </div>
+  <div class="core">
+    <div class="ico">🏭</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">真实用户正在用的那套正式系统。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">正在营业、真有客人的那家店。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">面向真实用户的正式运行环境。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">把稳定版本发布到生产环境。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">面向真实用户提供服务时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">还在开发测试阶段时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">拿真实用户当小白鼠，一出错影响所有人。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">把稳定版发到生产环境给真实用户用。</div></div>
+  <div class="mnemonic">生产环境，动真格的地方。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 部署</span><span class="pnum">027</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">部署</span>
+  <div class="term-head">
+    <h2 class="term-zh">测试环境</h2>
+    <div class="term-en">Staging</div>
+  </div>
+  <div class="core">
+    <div class="ico">🧪</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">上线前用来彩排的“仿真店”。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">开业前的试营业，只请自己人来走一遍。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">接近生产、用于验证的预发布环境。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">先在测试环境验证，再发到生产。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">上线前想安全验证时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">极小项目、直接上线时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">没彩排就开门，真实用户面前翻车。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">先发到测试环境验证，没问题再上线。</div></div>
+  <div class="mnemonic">先彩排，再开门。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 部署</span><span class="pnum">028</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">部署</span>
+  <div class="term-head">
+    <h2 class="term-zh">开发环境</h2>
+    <div class="term-en">Development</div>
+  </div>
+  <div class="core">
+    <div class="ico">🧰</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">你自己电脑上边写边试的地盘。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">厨师在自家厨房练手，不影响餐厅。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">开发者本地编写和调试的环境。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">在本地开发环境编码和自测。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">写代码、随便试错时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">要给别人看真实效果时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">在真实系统上乱改，容易搞砸。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">先在开发环境把__做出来自测。</div></div>
+  <div class="mnemonic">自家厨房，随便练手。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 部署</span><span class="pnum">029</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">部署</span>
+  <div class="term-head">
+    <h2 class="term-zh">域名</h2>
+    <div class="term-en">Domain</div>
+  </div>
+  <div class="core">
+    <div class="ico">🌐</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">网站的门牌地址，好记的那串网址。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">记 taobao.com，而不是一串数字地址。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">映射到服务器的可读网址。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">买一个域名并解析到服务器。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">要让用户用网址访问时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">只在本地测试时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">用户只能记一串难记的数字地址。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我配一个域名 __，指向我的网站。</div></div>
+  <div class="mnemonic">域名，是网站好记的门牌。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 部署</span><span class="pnum">030</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">部署</span>
+  <div class="term-head">
+    <h2 class="term-zh">DNS</h2>
+    <div class="term-en">DNS</div>
+  </div>
+  <div class="core">
+    <div class="ico">📇</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">把好记的网址翻译成机器认的地址。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">像通讯录，把“妈妈”翻译成她的手机号。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">域名到 IP 地址的解析系统。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">配置 DNS 记录把域名指向服务器。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">配置域名、让访问生效时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">不用域名时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">域名指不到服务器，网址打不开。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我配好 DNS，让 __ 这个域名能打开我的站。</div></div>
+  <div class="mnemonic">DNS，是网络的通讯录。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 部署</span><span class="pnum">031</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">部署</span>
+  <div class="term-head">
+    <h2 class="term-zh">CDN</h2>
+    <div class="term-en">CDN</div>
+  </div>
+  <div class="core">
+    <div class="ico">🛰️</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">把内容放到离用户最近的地方，加载更快。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">全国连锁便利店，就近就能买，不用跑总部。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">分布式缓存加速内容分发的网络。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">用 CDN 加速静态资源的访问。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">用户遍布各地、想加载更快时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">只有本地少量用户时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">远方用户打开又慢又卡。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我用 CDN 加速图片和页面加载。</div></div>
+  <div class="mnemonic">内容摆到用户家门口，才快。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 部署</span><span class="pnum">032</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">部署</span>
+  <div class="term-head">
+    <h2 class="term-zh">Cloudflare</h2>
+    <div class="term-en">Cloudflare</div>
+  </div>
+  <div class="core">
+    <div class="ico">🟠</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">一个免费好用的加速加防护平台。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">给网站请了个又能加速又能挡坏人的保安。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">提供 CDN、DNS、防护的一体化平台。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">用 Cloudflare 做加速、DNS 和防护。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">想省心地加速和防护网站时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">极简本地项目时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">网站慢、还容易被攻击。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">用 Cloudflare 帮我加速并保护网站。</div></div>
+  <div class="mnemonic">又快又安全，还免费。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 部署</span><span class="pnum">033</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">部署</span>
+  <div class="term-head">
+    <h2 class="term-zh">Vercel</h2>
+    <div class="term-en">Vercel</div>
+  </div>
+  <div class="core">
+    <div class="ico">▲</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">前端项目一键上线的平台。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">像一键发朋友圈，写完点一下就发布了。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">面向前端的自动化部署托管平台。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">把前端项目连上 Vercel 自动部署。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">做 Next.js 等前端、想快速上线时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">复杂后端为主时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">上线要手动折腾一堆配置。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">用 Vercel 帮我把前端一键部署上线。</div></div>
+  <div class="mnemonic">写完一点，立刻上线。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 部署</span><span class="pnum">034</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">部署</span>
+  <div class="term-head">
+    <h2 class="term-zh">Netlify</h2>
+    <div class="term-en">Netlify</div>
+  </div>
+  <div class="core">
+    <div class="ico">🔷</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">另一个网站一键部署平台。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">和 Vercel 类似的“一键发布”按钮。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">静态站点与前端的托管部署平台。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">把静态站点连上 Netlify 自动部署。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">部署静态网站、想省事时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">重后端项目时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">静态站上线也得手动搞半天。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">用 Netlify 帮我把这个网站部署上线。</div></div>
+  <div class="mnemonic">静态网站，一键就上。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 部署</span><span class="pnum">035</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">部署</span>
+  <div class="term-head">
+    <h2 class="term-zh">Docker</h2>
+    <div class="term-en">Docker</div>
+  </div>
+  <div class="core">
+    <div class="ico">🐳</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">把程序和它需要的一切打包成一个标准箱子。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">把整套厨房装进集装箱，搬到哪都能开火。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">用容器封装程序及其运行环境。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">用 Docker 打包程序，保证到哪都能一样运行。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">想让程序在任何机器都跑得一样时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">极简单机小脚本时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">换台机器就“在我这儿明明能跑”。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">用 Docker 把__打包，保证到哪都能跑。</div></div>
+  <div class="mnemonic">打包成箱，到哪都一样。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 部署</span><span class="pnum">036</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">部署</span>
+  <div class="term-head">
+    <h2 class="term-zh">容器</h2>
+    <div class="term-en">Container</div>
+  </div>
+  <div class="core">
+    <div class="ico">📦</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">一个装着程序和环境的独立小盒子。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">一个自带水电的集装箱房，独立又标准。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">隔离运行程序及依赖的轻量单元。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">把服务放进容器独立运行。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">要隔离、可复制地运行服务时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">极简本地运行时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">多个程序互相打架、环境冲突。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">把__放进一个容器里独立运行。</div></div>
+  <div class="mnemonic">各装各的箱，互不打扰。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 部署</span><span class="pnum">037</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">部署</span>
+  <div class="term-head">
+    <h2 class="term-zh">镜像</h2>
+    <div class="term-en">Image</div>
+  </div>
+  <div class="core">
+    <div class="ico">💿</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">容器的“出厂模板”，照它就能造出一样的箱子。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">像做菜的标准配方，照着做味道都一样。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">构建容器的只读模板。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">构建镜像用于创建一致的容器。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">要批量、可复制地部署时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">只跑一次的临时脚本时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">每台机器装出来的环境都不一样。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我打一个镜像，照它就能部署出一样的服务。</div></div>
+  <div class="mnemonic">镜像，是箱子的出厂模板。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 部署</span><span class="pnum">038</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">安全</span>
+  <div class="term-head">
+    <h2 class="term-zh">HTTPS</h2>
+    <div class="term-en">HTTPS</div>
+  </div>
+  <div class="core">
+    <div class="ico">🔒</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">网址前带小锁，数据传输被加密。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">寄挂号信，中途没人能拆看。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">加密传输的安全 HTTP 协议。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">为网站配置 HTTPS 加密访问。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">任何涉及用户数据的网站。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">纯本地测试时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">数据明文传输，容易被偷看。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我给网站配上 HTTPS，让访问是加密的。</div></div>
+  <div class="mnemonic">带锁的网址，才安全。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 安全</span><span class="pnum">039</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">安全</span>
+  <div class="term-head">
+    <h2 class="term-zh">SSL</h2>
+    <div class="term-en">SSL/TLS</div>
+  </div>
+  <div class="core">
+    <div class="ico">🛡️</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">让网址能上锁的那套加密技术。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">给信封加密封条的那套工艺。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">实现传输加密的安全协议。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">配置 SSL/TLS 启用加密通信。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">要开启 HTTPS 时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">无需加密时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">网站没法加密，浏览器还会警告。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我配好 SSL，让网站能用 HTTPS。</div></div>
+  <div class="mnemonic">SSL，是给网络上锁的手艺。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 安全</span><span class="pnum">040</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">安全</span>
+  <div class="term-head">
+    <h2 class="term-zh">证书</h2>
+    <div class="term-en">Certificate</div>
+  </div>
+  <div class="core">
+    <div class="ico">📜</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">证明“这网站是真的、可信的”的凭证。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">像营业执照，证明这家店是正规的。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">验证网站身份、启用加密的数字凭证。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">申请并安装 SSL 证书。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">要开启 HTTPS、取得信任时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">纯本地时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">浏览器提示“不安全”，用户不敢用。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我申请并配好网站证书，去掉不安全提示。</div></div>
+  <div class="mnemonic">有证在手，用户才信。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 安全</span><span class="pnum">041</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">部署</span>
+  <div class="term-head">
+    <h2 class="term-zh">端口</h2>
+    <div class="term-en">Port</div>
+  </div>
+  <div class="core">
+    <div class="ico">🔌</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">一台机器上不同服务各走的一道门。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">一栋楼有很多门，各部门走各的门。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">标识主机上不同服务的编号通道。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">为不同服务分配和开放端口。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">一台机器跑多个服务时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">只跑单一服务时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">服务抢同一道门，互相冲突。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">把__服务放在 __ 端口上运行。</div></div>
+  <div class="mnemonic">一个服务，走一道门。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 部署</span><span class="pnum">042</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">部署</span>
+  <div class="term-head">
+    <h2 class="term-zh">公网</h2>
+    <div class="term-en">Public Network</div>
+  </div>
+  <div class="core">
+    <div class="ico">🌍</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">整个互联网都能访问到的地址。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">临街的店面，谁路过都能进。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">可被外部互联网访问的网络。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">把服务开放到公网供外部访问。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">要让外部用户访问时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">只给内部用时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">外部用户根本连不上你的服务。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">把__放到公网，让外面的人能访问。</div></div>
+  <div class="mnemonic">公网，是临街的门面。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 部署</span><span class="pnum">043</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">安全</span>
+  <div class="term-head">
+    <h2 class="term-zh">内网</h2>
+    <div class="term-en">Private Network</div>
+  </div>
+  <div class="core">
+    <div class="ico">🏠</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">只有自己人能访问的内部网络。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">公司内部才能进的办公区。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">仅限内部访问的隔离网络。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">把敏感服务限制在内网。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">服务只给内部、要安全时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">要对外开放时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">本该保密的服务暴露在外。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">把__放在内网，只让内部访问。</div></div>
+  <div class="mnemonic">内网，是自家院子。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 安全</span><span class="pnum">044</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">部署</span>
+  <div class="term-head">
+    <h2 class="term-zh">IP</h2>
+    <div class="term-en">IP Address</div>
+  </div>
+  <div class="core">
+    <div class="ico">🔢</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">每台联网设备在网络里的门牌号。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">像每个家庭都有的门牌地址。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">标识网络设备的地址编号。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">为服务器配置和使用 IP 地址。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">配置网络、定位设备时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">无需直接接触底层网络时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">找不到设备在哪，连不上。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">我的服务器 IP 是__，帮我把域名指过去。</div></div>
+  <div class="mnemonic">IP，是设备的门牌号。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 部署</span><span class="pnum">045</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">安全</span>
+  <div class="term-head">
+    <h2 class="term-zh">防火墙</h2>
+    <div class="term-en">Firewall</div>
+  </div>
+  <div class="core">
+    <div class="ico">🧱</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">挡在门口、决定谁能进的安全门卫。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">小区门口的保安，可疑的人不让进。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">按规则拦截网络访问的安全机制。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">配置防火墙只放行必要的访问。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">服务对外、要防攻击时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">纯本地隔离环境时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">谁都能进，容易被攻击。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我配防火墙，只开放__端口，其余全挡。</div></div>
+  <div class="mnemonic">把好门，坏人进不来。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 安全</span><span class="pnum">046</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">部署</span>
+  <div class="term-head">
+    <h2 class="term-zh">代理</h2>
+    <div class="term-en">Proxy</div>
+  </div>
+  <div class="core">
+    <div class="ico">🔀</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">替你转发请求的中间人。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">跑腿代购，你不出面，他替你去买。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">转发并中转网络请求的中间层。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">用代理转发或聚合请求。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">要隐藏来源、统一转发时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">直连即可时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">请求无法统一转发或隐藏。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我配个代理，把请求统一转发到__。</div></div>
+  <div class="mnemonic">代理，是替你跑腿的中间人。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 部署</span><span class="pnum">047</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">部署</span>
+  <div class="term-head">
+    <h2 class="term-zh">Nginx</h2>
+    <div class="term-en">Nginx</div>
+  </div>
+  <div class="core">
+    <div class="ico">🧭</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">站在最前面分发请求的门口调度员。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">商场大门的引导员，把人流指向各楼层。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">高性能的反向代理与静态服务器。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">用 Nginx 做请求转发和静态托管。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">要转发请求、托管静态资源时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">极简单机应用时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">请求进来没人调度，服务混乱。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">用 Nginx 把请求转发到__，并托管静态文件。</div></div>
+  <div class="mnemonic">门口有人调度，秩序才好。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 部署</span><span class="pnum">048</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">API</h2>
+    <div class="term-en">API</div>
+  </div>
+  <div class="core">
+    <div class="ico">🔌</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">两个软件之间的电话线，让它们互相传话。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">餐厅点菜：你（顾客）通过服务员和后厨沟通，服务员就是 API。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">系统对外提供的、可被调用的接口。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">设计接口让前端或别的系统调用你的功能。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">不同系统或前后端要交换数据时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">完全独立、不与外界交互时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">各软件之间无法沟通、传不了数据。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我做一个 API，让__能拿到__数据。</div></div>
+  <div class="mnemonic">API，是软件之间的电话线。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">049</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">接口</h2>
+    <div class="term-en">Interface</div>
+  </div>
+  <div class="core">
+    <div class="ico">🔗</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">一个对外约定好的“怎么找我办事”的入口。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">银行柜台窗口，照规矩递材料就能办事。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">对外暴露、约定输入输出的调用点。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">定义清晰的输入输出让别人调用。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">要让别人用你的功能时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">纯内部、不对外时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">别人不知道怎么用你的功能。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我定义一个接口，输入__返回__。</div></div>
+  <div class="mnemonic">接口，是对外办事的窗口。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">050</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">REST</h2>
+    <div class="term-en">REST API</div>
+  </div>
+  <div class="core">
+    <div class="ico">🧾</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">一种最常见的接口设计风格。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">像标准化的快递单，大家都按同一格式填。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">基于 HTTP 资源的接口约定风格。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">按 REST 规范设计增删改查接口。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">做常规增删改查接口时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">需求特殊、REST 不合适时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">接口五花八门，别人难对接。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我用 REST 风格做__的增删改查接口。</div></div>
+  <div class="mnemonic">照标准格式来，谁都好对接。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">051</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">GraphQL</h2>
+    <div class="term-en">GraphQL</div>
+  </div>
+  <div class="core">
+    <div class="ico">🕸️</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">让调用方自己挑要哪些数据的接口方式。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">自助餐，想吃什么自己夹，不多不少。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">客户端按需查询数据的接口规范。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">用 GraphQL 让前端按需取数据。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">前端要灵活取不同字段时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">接口简单、固定返回时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">要么取太多、要么反复加接口。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">用 GraphQL，让前端自己挑要哪些字段。</div></div>
+  <div class="mnemonic">要什么自己点，不多给。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">052</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">Webhook</h2>
+    <div class="term-en">Webhook</div>
+  </div>
+  <div class="core">
+    <div class="ico">📣</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">有事发生时，系统主动打电话通知你。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">快递到了，快递员主动打电话，不用你一直问。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">事件触发时向指定地址推送通知。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">配置 Webhook 在事件发生时回调你的接口。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">要在别的系统发生事时被通知时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">自己定时查就够时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">只能不停轮询，既慢又费。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">当__发生时，用 Webhook 通知我的系统。</div></div>
+  <div class="mnemonic">有事它喊你，不用你一直问。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">053</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">JSON</h2>
+    <div class="term-en">JSON</div>
+  </div>
+  <div class="core">
+    <div class="ico">🧷</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">一种软件之间传数据的通用格式。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">像大家都看得懂的标准填表格式。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">轻量的结构化数据交换格式。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">用 JSON 作为接口的数据格式。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">系统间传结构化数据时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">传纯文件或二进制时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">数据格式各不相同，对不上。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">接口数据都用 JSON 格式返回。</div></div>
+  <div class="mnemonic">JSON，是软件间的通用表格。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">054</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">SDK</h2>
+    <div class="term-en">SDK</div>
+  </div>
+  <div class="core">
+    <div class="ico">🧰</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">别人做好的工具包，帮你少写很多代码。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">宜家家具的配件包，照着装就行。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">封装好的开发工具与函数集合。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">引入 SDK 直接调用现成能力。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">要接入第三方服务时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">功能简单、无需依赖时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">从零造轮子，又慢又易错。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">用__的官方 SDK 帮我快速接入它的功能。</div></div>
+  <div class="mnemonic">现成工具包，拿来就用。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">055</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">环境变量</h2>
+    <div class="term-en">Environment Variable</div>
+  </div>
+  <div class="core">
+    <div class="ico">🔧</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">把密钥、配置等放在代码外面的开关。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">保险箱密码不写在门上，另外记在安全处。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">运行时注入的外部配置项。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">把密钥和配置放进环境变量而非硬编码。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">有密钥、有不同环境配置时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">无任何敏感配置时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">密钥写死在代码里，一泄露就完蛋。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">把__的密钥放到环境变量里，别写死在代码里。</div></div>
+  <div class="mnemonic">秘密别写墙上，另存别处。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">056</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">部署</span>
+  <div class="term-head">
+    <h2 class="term-zh">日志</h2>
+    <div class="term-en">Log</div>
+  </div>
+  <div class="core">
+    <div class="ico">📜</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">程序运行时留下的“流水账”。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">监控录像，出事了能回看当时发生了什么。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">记录运行过程和事件的输出。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">打印并保存运行日志便于排查。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">要排查问题、追溯过程时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">极简一次性脚本时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">出问题两眼一抹黑，不知哪错了。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我给__加日志，出问题能回看发生了什么。</div></div>
+  <div class="mnemonic">留好流水账，出事好查。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 部署</span><span class="pnum">057</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">部署</span>
+  <div class="term-head">
+    <h2 class="term-zh">监控</h2>
+    <div class="term-en">Monitoring</div>
+  </div>
+  <div class="core">
+    <div class="ico">📈</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">时刻盯着系统好不好、有没有异常。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">ICU 的心电监护，一有异常就报警。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">持续观测系统健康与指标的机制。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">接入监控，异常时及时告警。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">线上服务要保稳定时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">本地一次性运行时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">系统挂了都不知道，用户先发现。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我加监控，__出问题时能及时报警。</div></div>
+  <div class="mnemonic">盯着点，才能早发现。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 部署</span><span class="pnum">058</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">部署</span>
+  <div class="term-head">
+    <h2 class="term-zh">错误追踪</h2>
+    <div class="term-en">Error Tracking</div>
+  </div>
+  <div class="core">
+    <div class="ico">🐞</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">自动记录程序哪里报错、怎么错的。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">汽车故障灯，亮了就知道哪出问题。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">捕获并汇总运行时错误的工具。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">接入错误追踪自动收集报错。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">线上要快速定位 bug 时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">极小项目时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">用户报错你却不知道错在哪。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我接入错误追踪，自动收集线上报错。</div></div>
+  <div class="mnemonic">错在哪，让它自己招。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 部署</span><span class="pnum">059</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">数据</span>
+  <div class="term-head">
+    <h2 class="term-zh">备份</h2>
+    <div class="term-en">Backup</div>
+  </div>
+  <div class="core">
+    <div class="ico">🗂️</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">给重要数据多存一份，以防万一。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">重要文件多存一份到网盘，丢了还有。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">定期复制数据以防丢失。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">设置定期自动备份数据。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">数据重要、丢不起时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">数据可随时重建时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">一旦出事，数据全丢无法挽回。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我给__设置定期自动备份。</div></div>
+  <div class="mnemonic">多存一份，睡得安稳。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 数据</span><span class="pnum">060</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">数据</span>
+  <div class="term-head">
+    <h2 class="term-zh">恢复</h2>
+    <div class="term-en">Restore</div>
+  </div>
+  <div class="core">
+    <div class="ico">♻️</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">出事后，用备份把数据还原回来。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">手机坏了，用云备份把资料装回新机。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">从备份还原数据到可用状态。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">实现从备份恢复数据的流程。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">出故障要救回数据时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">无重要数据时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">有备份却不会用，等于白备。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我做好从备份恢复__数据的流程。</div></div>
+  <div class="mnemonic">备了要能还，才算真备。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 数据</span><span class="pnum">061</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">安全</span>
+  <div class="term-head">
+    <h2 class="term-zh">认证</h2>
+    <div class="term-en">Authentication</div>
+  </div>
+  <div class="core">
+    <div class="ico">🪪</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">确认“你是不是你本人”。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">进门先刷脸，确认是你才放行。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">验证用户身份真实性的过程。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">实现登录校验确认用户身份。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">有账号、要确认身份时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">人人可用、无账号时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">冒名顶替随便进，账号不安全。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我做认证，用户登录时确认他是本人。</div></div>
+  <div class="mnemonic">先证明是你，再让你进。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 安全</span><span class="pnum">062</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">安全</span>
+  <div class="term-head">
+    <h2 class="term-zh">授权</h2>
+    <div class="term-en">Authorization</div>
+  </div>
+  <div class="core">
+    <div class="ico">🎟️</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">确认“你能不能做这件事”。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">有门禁卡能进楼，但进不了机房。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">在身份确认后判定操作权限。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">按角色控制用户能访问什么。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">不同用户能做的事不同时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">所有人权限相同时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">登录后什么都能干，越权出事。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">登录后按角色控制谁能做__、谁不能。</div></div>
+  <div class="mnemonic">认证问你是谁，授权问你能干嘛。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 安全</span><span class="pnum">063</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">安全</span>
+  <div class="term-head">
+    <h2 class="term-zh">Token</h2>
+    <div class="term-en">Token</div>
+  </div>
+  <div class="core">
+    <div class="ico">🎫</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">登录后发给你的一张“通行证”。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">进游乐园换的手环，凭它随便玩。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">代表身份和权限的访问凭证。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">用 Token 验证后续请求的身份。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">接口要识别登录用户时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">无登录状态时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">每次操作都要重新登录，太烦。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">登录后发一个 Token，之后凭它访问接口。</div></div>
+  <div class="mnemonic">一证在手，畅通无阻。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 安全</span><span class="pnum">064</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">安全</span>
+  <div class="term-head">
+    <h2 class="term-zh">Cookie</h2>
+    <div class="term-en">Cookie</div>
+  </div>
+  <div class="core">
+    <div class="ico">🍪</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">网站存在你浏览器里的小纸条。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">商店在你会员卡上盖的章，下次认得你。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">浏览器保存的小段状态数据。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">用 Cookie 保存登录状态等信息。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">要在浏览器记住用户状态时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">纯无状态接口时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">每次访问都像第一次，记不住你。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">用 Cookie 记住用户的登录状态。</div></div>
+  <div class="mnemonic">网站塞给你的小纸条。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 安全</span><span class="pnum">065</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">安全</span>
+  <div class="term-head">
+    <h2 class="term-zh">Session</h2>
+    <div class="term-en">Session</div>
+  </div>
+  <div class="core">
+    <div class="ico">⏱️</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">你这一次登录期间的“会话”记录。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">进网吧开的一台机，下机就结束。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">服务端维护的用户登录会话状态。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">用 Session 维持登录期间的状态。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">要维持一段登录期状态时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">纯 Token 无状态时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">系统记不住你还在登录中。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">用 Session 维持用户这次登录的状态。</div></div>
+  <div class="mnemonic">登录到退出，就是一次会话。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 安全</span><span class="pnum">066</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">安全</span>
+  <div class="term-head">
+    <h2 class="term-zh">OAuth</h2>
+    <div class="term-en">OAuth</div>
+  </div>
+  <div class="core">
+    <div class="ico">🔐</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">用微信/谷歌账号一键登录别的应用。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">拿身份证去别处办事，不用重新办证。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">授权第三方登录而不暴露密码的协议。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">接入 OAuth 支持第三方账号登录。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">想让用户用现成账号快速登录时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">只需自建账号时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">用户嫌注册麻烦，直接走了。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我接入用微信/谷歌一键登录（OAuth）。</div></div>
+  <div class="mnemonic">借个现成身份，一键登录。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 安全</span><span class="pnum">067</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">安全</span>
+  <div class="term-head">
+    <h2 class="term-zh">JWT</h2>
+    <div class="term-en">JWT</div>
+  </div>
+  <div class="core">
+    <div class="ico">🧾</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">一种自带信息、防篡改的通行证。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">带防伪水印的门票，验票不用打电话核对。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">可自校验的令牌格式。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">用 JWT 做无状态的身份令牌。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">接口要无状态验证身份时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">简单会话即可时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">每次都要查库验身份，慢。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">用 JWT 做登录令牌，接口能自己验证。</div></div>
+  <div class="mnemonic">一张带防伪的自证门票。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 安全</span><span class="pnum">068</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">邮件服务</h2>
+    <div class="term-en">Email Service</div>
+  </div>
+  <div class="core">
+    <div class="ico">📧</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">让系统能自动发邮件。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">注册后自动收到的那封验证邮件。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">对接邮件发送能力的服务。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">接入邮件服务发送验证或通知邮件。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">要发验证码、通知邮件时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">完全不发邮件时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">无法给用户发验证或通知。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我接入邮件服务，注册时给用户发验证邮件。</div></div>
+  <div class="mnemonic">让系统会自己发邮件。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">069</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">短信服务</h2>
+    <div class="term-en">SMS Service</div>
+  </div>
+  <div class="core">
+    <div class="ico">📲</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">让系统能自动发短信验证码。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">登录时收到的那条“验证码 6 位数”。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">对接短信发送能力的服务。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">接入短信服务发送验证码或通知。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">要手机验证码、短信提醒时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">不需要短信时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">没法用手机号验证用户。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我接入短信服务，发手机验证码。</div></div>
+  <div class="mnemonic">让系统会自己发短信。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">070</span></div>
+</section>
+<section class="page term t-orange">
+  <div class="color-bar"></div>
+  <span class="term-tag">商业</span>
+  <div class="term-head">
+    <h2 class="term-zh">支付接口</h2>
+    <div class="term-en">Payment Gateway</div>
+  </div>
+  <div class="core">
+    <div class="ico">💳</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">帮你安全收钱的中间通道。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">商店里的刷卡机，安全地把钱收进来。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">对接第三方完成收款的接口。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">接入支付宝/微信/Stripe 等收款。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">要向用户收钱时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">完全免费时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">想收钱却没有安全的收款渠道。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我接入支付接口，让用户能安全付款。</div></div>
+  <div class="mnemonic">收钱这事，交给专业通道。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 商业</span><span class="pnum">071</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">部署</span>
+  <div class="term-head">
+    <h2 class="term-zh">定时任务</h2>
+    <div class="term-en">Scheduled Task</div>
+  </div>
+  <div class="core">
+    <div class="ico">⏰</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">让系统到点自动干某件事。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">定好每天早 7 点自动响的闹钟。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">按时间自动触发的后台任务。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">实现按计划自动执行的任务。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">要定期自动跑某事时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">只手动触发时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">该定时做的事得靠人记着手动做。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我设一个定时任务，每天__自动执行__。</div></div>
+  <div class="mnemonic">到点自动办，不用惦记。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 部署</span><span class="pnum">072</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">部署</span>
+  <div class="term-head">
+    <h2 class="term-zh">Cron</h2>
+    <div class="term-en">Cron</div>
+  </div>
+  <div class="core">
+    <div class="ico">🕰️</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">专门用来安排定时任务的时间表写法。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">像列车时刻表，规定每趟几点发车。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">以特定表达式设定周期任务的机制。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">用 Cron 表达式配置任务执行周期。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">要精确控制运行周期时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">只跑一次时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">定时规则说不清，任务乱跑。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">用 Cron 设置每__执行一次__。</div></div>
+  <div class="mnemonic">Cron，是任务的时刻表。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 部署</span><span class="pnum">073</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">队列</h2>
+    <div class="term-en">Queue</div>
+  </div>
+  <div class="core">
+    <div class="ico">🚶</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">让任务排好队，一个个来，不挤爆。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">食堂排队打饭，一个个来，不哄抢。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">按顺序缓冲和处理任务的结构。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">用队列把任务排队逐个处理。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">任务多、要削峰有序处理时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">任务少、即时处理即可时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">任务一拥而上，系统被压垮。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">把__任务放进队列排队处理，别一次全上。</div></div>
+  <div class="mnemonic">排好队，一个个来。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">074</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">消息队列</h2>
+    <div class="term-en">Message Queue</div>
+  </div>
+  <div class="core">
+    <div class="ico">📨</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">系统之间靠“留言箱”异步传递任务。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">把便条投进信箱，对方有空再取来办。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">系统间异步传递消息的中间件。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">用消息队列解耦系统、异步处理。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">多系统要异步、解耦协作时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">单系统同步处理即可时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">系统紧耦合，一个卡全卡。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">用消息队列让__和__异步传递任务。</div></div>
+  <div class="mnemonic">留个言，各忙各的。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">075</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">安全</span>
+  <div class="term-head">
+    <h2 class="term-zh">限流</h2>
+    <div class="term-en">Rate Limiting</div>
+  </div>
+  <div class="core">
+    <div class="ico">🚧</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">限制访问速度，防止被打爆。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">景区限流，每小时只放一定人数进。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">控制单位时间请求量的保护机制。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">对接口做限流防止滥用和过载。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">怕被刷、被压垮时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">内部低频使用时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">被恶意刷爆，服务瘫痪。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我给__接口加限流，防止被刷爆。</div></div>
+  <div class="mnemonic">限个流,别被挤爆。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 安全</span><span class="pnum">076</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">部署</span>
+  <div class="term-head">
+    <h2 class="term-zh">负载均衡</h2>
+    <div class="term-en">Load Balancing</div>
+  </div>
+  <div class="core">
+    <div class="ico">⚖️</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">把访问分摊到多台机器，谁都不累垮。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">多个收银台分流顾客，队都不长。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">在多台服务器间分配流量的机制。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">用负载均衡把请求分到多台服务器。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">流量大、单机扛不住时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">流量很小时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">全压在一台机器上，一挂全挂。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我加负载均衡，把流量分到多台服务器。</div></div>
+  <div class="mnemonic">多开几个窗口，队就短了。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 部署</span><span class="pnum">077</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">CI</h2>
+    <div class="term-en">Continuous Integration</div>
+  </div>
+  <div class="core">
+    <div class="ico">🔁</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">每次改代码就自动检查有没有出问题。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">每写完一页就自动帮你检查错别字。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">代码提交后自动构建与测试的流程。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">配置 CI 在提交时自动跑测试。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">多人协作、要保证代码质量时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">个人小脚本时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">问题攒到最后才发现，难收拾。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我配 CI，每次提交代码自动跑测试检查。</div></div>
+  <div class="mnemonic">边写边查，问题早现形。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">078</span></div>
+</section>
+<section class="page term t-green">
+  <div class="color-bar"></div>
+  <span class="term-tag">部署</span>
+  <div class="term-head">
+    <h2 class="term-zh">CD</h2>
+    <div class="term-en">Continuous Delivery</div>
+  </div>
+  <div class="core">
+    <div class="ico">📦</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">代码通过检查后自动发布上线。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">打印完自动装订、直接寄出。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">自动化把通过的代码交付到环境。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">配置 CD 在测试通过后自动部署。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">想让上线又快又稳时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">极简单机项目时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">每次上线都得手动折腾易出错。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我配 CD，测试通过后自动部署上线。</div></div>
+  <div class="mnemonic">过了检查，自动送上线。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 部署</span><span class="pnum">079</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">构建</h2>
+    <div class="term-en">Build</div>
+  </div>
+  <div class="core">
+    <div class="ico">🏗️</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">把写的代码加工成能运行的成品。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">把面粉鸡蛋做成能吃的蛋糕。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">把源码编译打包成可运行产物。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">运行构建生成可部署的产物。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">代码要变成可运行成品时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">解释型脚本直接运行时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">代码是原料，没加工不能用。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我把项目构建成可以部署的成品。</div></div>
+  <div class="mnemonic">把原料，做成能上桌的成品。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">080</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">打包</h2>
+    <div class="term-en">Bundle / Package</div>
+  </div>
+  <div class="core">
+    <div class="ico">📦</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">把一堆文件压成一个方便分发的整体。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">搬家把零碎装进几个大箱子，好搬。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">把代码和资源合并压缩成分发包。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">把项目打包成可发布的文件。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">要分发、部署项目时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">本地零散运行时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">文件散一地，难分发难加载。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我把项目打包成一个可发布的文件。</div></div>
+  <div class="mnemonic">零碎装箱，方便搬运。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">081</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">编译</h2>
+    <div class="term-en">Compile</div>
+  </div>
+  <div class="core">
+    <div class="ico">⚙️</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">把人写的代码翻译成机器能执行的语言。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">把中文稿翻译成外国人能读的版本。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">把源代码转换为机器码的过程。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">编译源码为可执行程序。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">用编译型语言时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">用解释型脚本时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">机器读不懂源码，跑不起来。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我把这段代码编译成能运行的程序。</div></div>
+  <div class="mnemonic">翻译成机器话，它才听得懂。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">082</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">依赖</h2>
+    <div class="term-en">Dependency</div>
+  </div>
+  <div class="core">
+    <div class="ico">🧩</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">你的程序要用到的别人写好的现成模块。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">做菜要用到别人生产的酱油、味精。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">项目运行所需的第三方库。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">声明并安装项目所需依赖。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">要用现成库、不重复造轮子时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">完全自给自足时（少见）。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">缺了它，程序根本跑不起来。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">这个项目依赖__，帮我装好。</div></div>
+  <div class="mnemonic">站在别人肩上，少造轮子。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">083</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">包管理器</h2>
+    <div class="term-en">Package Manager</div>
+  </div>
+  <div class="core">
+    <div class="ico">🛒</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">帮你自动下载、管理依赖的工具。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">像跑腿助手，你列清单它帮你把料买齐。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">管理项目依赖安装与版本的工具。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">用 npm/pip 等安装管理依赖。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">项目有多个依赖时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">无任何依赖时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">得手动一个个找库装，又乱又累。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">用包管理器帮我装好项目需要的所有依赖。</div></div>
+  <div class="mnemonic">列个清单，它帮你买齐。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">084</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">Node.js</h2>
+    <div class="term-en">Node.js</div>
+  </div>
+  <div class="core">
+    <div class="ico">🟩</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">让 JavaScript 也能在服务器上跑的环境。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">让原本只在教室用的工具，也能搬去工厂用。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">服务端运行 JavaScript 的运行时。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">用 Node.js 写后端服务。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">想用 JS 写前后端时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">指定用别的语言时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">没法用 JS 写服务器端逻辑。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">用 Node.js 帮我写后端。</div></div>
+  <div class="mnemonic">让前端语言也能管后厨。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">085</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">Python</h2>
+    <div class="term-en">Python</div>
+  </div>
+  <div class="core">
+    <div class="ico">🐍</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">简单好学、AI 领域最常用的编程语言。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">像一门语法简单、上手快的外语。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">通用、易读、AI 生态丰富的语言。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">用 Python 写脚本、后端或 AI 逻辑。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">做数据、AI、脚本时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">指定用别的语言时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">缺少最顺手的 AI 开发语言。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">用 Python 帮我实现__。</div></div>
+  <div class="mnemonic">简单好学，AI 都爱用。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">086</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">Next.js</h2>
+    <div class="term-en">Next.js</div>
+  </div>
+  <div class="core">
+    <div class="ico">⏭️</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">做现代网站的一套流行框架。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">像装修的整套工具包，省得零件到处找。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">基于 React 的全栈网页框架。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">用 Next.js 快速搭建现代网站。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">做正经网站、要快又好时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">极简单页时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">从零搭网站，配置一堆很折腾。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">用 Next.js 帮我搭这个网站。</div></div>
+  <div class="mnemonic">现代网站的整套工具包。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">087</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">React</h2>
+    <div class="term-en">React</div>
+  </div>
+  <div class="core">
+    <div class="ico">⚛️</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">把界面拆成一块块积木来搭的前端工具。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">用乐高积木拼东西，块块可复用。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">组件化构建用户界面的前端库。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">用 React 把界面拆成组件来开发。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">做交互丰富的界面时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">极简静态页时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">界面代码乱成一团，难维护。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">用 React 帮我做这个交互界面。</div></div>
+  <div class="mnemonic">把界面拆成积木来搭。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">088</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">Vue</h2>
+    <div class="term-en">Vue</div>
+  </div>
+  <div class="core">
+    <div class="ico">💚</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">另一套简单友好的前端框架。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">和 React 类似的另一盒界面积木。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">渐进式的前端界面框架。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">用 Vue 构建前端界面。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">想要上手更简单的前端时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">团队已定用别的框架时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">缺少组织界面的顺手工具。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">用 Vue 帮我做这个前端界面。</div></div>
+  <div class="mnemonic">上手友好的界面积木。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">089</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">CLI</h2>
+    <div class="term-en">Command-Line Interface</div>
+  </div>
+  <div class="core">
+    <div class="ico">⌨️</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">靠打字命令来操作的黑框界面。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">不用鼠标点，直接对着窗口下命令办事。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">通过命令行操作程序的方式。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">提供命令行方式操作工具。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">做开发者工具、要自动化时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">面向普通用户、要图形界面时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">没有可脚本化的高效操作入口。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我做一个命令行工具，输入__就能__。</div></div>
+  <div class="mnemonic">打几行命令，活就办了。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">090</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">终端</h2>
+    <div class="term-en">Terminal</div>
+  </div>
+  <div class="core">
+    <div class="ico">🖳</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">那个可以敲命令的黑色窗口。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">和电脑直接对话的“对讲机”。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">输入命令、查看输出的文本窗口。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">在终端里运行命令操作项目。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">跑命令、装依赖、部署时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">纯图形操作时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">很多开发操作没法高效完成。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">在终端里帮我运行__这条命令。</div></div>
+  <div class="mnemonic">终端，是和电脑对话的窗口。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">091</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">命令行</h2>
+    <div class="term-en">Command Line</div>
+  </div>
+  <div class="core">
+    <div class="ico">➡️</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">在终端里敲的那一行行指令。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">对着助手说“帮我把灯关了”这类具体指令。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">通过文本指令让程序执行操作。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">用命令行指令完成开发操作。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">要精确、可重复地操作时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">点点鼠标就够时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">复杂操作难以自动化重复。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我写出完成__需要敲的命令行指令。</div></div>
+  <div class="mnemonic">一行命令，胜过点十下。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">092</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">README</h2>
+    <div class="term-en">README</div>
+  </div>
+  <div class="core">
+    <div class="ico">📖</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">项目的“说明书”，告诉别人这是什么、怎么用。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">新家电盒子里那张“使用说明”。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">介绍项目用途与用法的说明文档。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">写一份 README 说明项目和用法。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">项目要给别人看、开源时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">纯私人临时脚本时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">别人打开项目一脸懵，不会用。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我写一份 README，介绍这个项目和怎么用。</div></div>
+  <div class="mnemonic">先读我，再用我。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">093</span></div>
+</section>
+<section class="page term t-blue">
+  <div class="color-bar"></div>
+  <span class="term-tag">开发</span>
+  <div class="term-head">
+    <h2 class="term-zh">License</h2>
+    <div class="term-en">License</div>
+  </div>
+  <div class="core">
+    <div class="ico">⚖️</div>
+    <div class="core-body">
+      <div class="lbl">一句话理解</div>
+      <div class="txt">告诉别人这东西能不能用、怎么用的许可说明。</div>
+    </div>
+  </div>
+  <div class="mod"><div class="mh">生活中的例子</div><div class="mb">书上的“版权所有/可否转载”声明。</div></div>
+  <div class="mod"><div class="mh">程序员真正想表达什么</div><div class="mb">规定代码使用与分发权利的许可。</div></div>
+  <div class="mod"><div class="mh">AI 会翻译成什么开发需求</div><div class="mb">为项目选择并添加开源许可证。</div></div>
+  <div class="two">
+    <div class="col yes"><div class="mh"><span class="s">✓</span>什么时候需要</div><div class="mb">开源、要讲清使用权时。</div></div>
+    <div class="col no"><div class="mh"><span class="s">✕</span>什么时候不需要</div><div class="mb">纯私有不公开时。</div></div>
+  </div>
+  <div class="mod"><div class="mh">没有它会怎样</div><div class="mb">别人不敢用，怕侵权。</div></div>
+  <div class="tellai"><div class="mh">小白应该怎么告诉 AI</div><div class="quote">帮我给项目加一个 __ 开源许可证。</div></div>
+  <div class="mnemonic">讲清能不能用，别人才敢用。</div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册 · 开发</span><span class="pnum">094</span></div>
+</section>
+<section class="page index t-blue">
+  <div class="color-bar"></div>
+  <div class="kicker">索引 · Index</div><h1>术语索引</h1>
+  <h2>按中文（拼音 / 笔画大致排序）</h2>
+  <div class="idx-cols"><div class="idx-row"><span class="a">API</span><span class="b">API</span><span class="dots"></span><span class="pg">049</span></div><div class="idx-row"><span class="a">CD</span><span class="b">Continuous Delivery</span><span class="dots"></span><span class="pg">079</span></div><div class="idx-row"><span class="a">CDN</span><span class="b">CDN</span><span class="dots"></span><span class="pg">032</span></div><div class="idx-row"><span class="a">CI</span><span class="b">Continuous Integration</span><span class="dots"></span><span class="pg">078</span></div><div class="idx-row"><span class="a">CLI</span><span class="b">Command-Line Interface</span><span class="dots"></span><span class="pg">090</span></div><div class="idx-row"><span class="a">Cloudflare</span><span class="b">Cloudflare</span><span class="dots"></span><span class="pg">033</span></div><div class="idx-row"><span class="a">Cookie</span><span class="b">Cookie</span><span class="dots"></span><span class="pg">065</span></div><div class="idx-row"><span class="a">Cron</span><span class="b">Cron</span><span class="dots"></span><span class="pg">073</span></div><div class="idx-row"><span class="a">DNS</span><span class="b">DNS</span><span class="dots"></span><span class="pg">031</span></div><div class="idx-row"><span class="a">Docker</span><span class="b">Docker</span><span class="dots"></span><span class="pg">036</span></div><div class="idx-row"><span class="a">GraphQL</span><span class="b">GraphQL</span><span class="dots"></span><span class="pg">052</span></div><div class="idx-row"><span class="a">HTTPS</span><span class="b">HTTPS</span><span class="dots"></span><span class="pg">039</span></div><div class="idx-row"><span class="a">IP</span><span class="b">IP Address</span><span class="dots"></span><span class="pg">045</span></div><div class="idx-row"><span class="a">JSON</span><span class="b">JSON</span><span class="dots"></span><span class="pg">054</span></div><div class="idx-row"><span class="a">JWT</span><span class="b">JWT</span><span class="dots"></span><span class="pg">068</span></div><div class="idx-row"><span class="a">License</span><span class="b">License</span><span class="dots"></span><span class="pg">094</span></div><div class="idx-row"><span class="a">MySQL</span><span class="b">MySQL</span><span class="dots"></span><span class="pg">012</span></div><div class="idx-row"><span class="a">Netlify</span><span class="b">Netlify</span><span class="dots"></span><span class="pg">035</span></div><div class="idx-row"><span class="a">Next.js</span><span class="b">Next.js</span><span class="dots"></span><span class="pg">087</span></div><div class="idx-row"><span class="a">Nginx</span><span class="b">Nginx</span><span class="dots"></span><span class="pg">048</span></div><div class="idx-row"><span class="a">Node.js</span><span class="b">Node.js</span><span class="dots"></span><span class="pg">085</span></div><div class="idx-row"><span class="a">OAuth</span><span class="b">OAuth</span><span class="dots"></span><span class="pg">067</span></div><div class="idx-row"><span class="a">PostgreSQL</span><span class="b">PostgreSQL</span><span class="dots"></span><span class="pg">011</span></div><div class="idx-row"><span class="a">Python</span><span class="b">Python</span><span class="dots"></span><span class="pg">086</span></div><div class="idx-row"><span class="a">README</span><span class="b">README</span><span class="dots"></span><span class="pg">093</span></div><div class="idx-row"><span class="a">REST</span><span class="b">REST API</span><span class="dots"></span><span class="pg">051</span></div><div class="idx-row"><span class="a">React</span><span class="b">React</span><span class="dots"></span><span class="pg">088</span></div><div class="idx-row"><span class="a">Redis</span><span class="b">Redis</span><span class="dots"></span><span class="pg">013</span></div><div class="idx-row"><span class="a">SDK</span><span class="b">SDK</span><span class="dots"></span><span class="pg">055</span></div><div class="idx-row"><span class="a">SQLite</span><span class="b">SQLite</span><span class="dots"></span><span class="pg">009</span></div><div class="idx-row"><span class="a">SSL</span><span class="b">SSL/TLS</span><span class="dots"></span><span class="pg">040</span></div><div class="idx-row"><span class="a">Schema</span><span class="b">Schema</span><span class="dots"></span><span class="pg">014</span></div><div class="idx-row"><span class="a">Serverless</span><span class="b">Serverless</span><span class="dots"></span><span class="pg">024</span></div><div class="idx-row"><span class="a">Session</span><span class="b">Session</span><span class="dots"></span><span class="pg">066</span></div><div class="idx-row"><span class="a">Supabase</span><span class="b">Supabase</span><span class="dots"></span><span class="pg">010</span></div><div class="idx-row"><span class="a">Token</span><span class="b">Token</span><span class="dots"></span><span class="pg">064</span></div><div class="idx-row"><span class="a">Vercel</span><span class="b">Vercel</span><span class="dots"></span><span class="pg">034</span></div><div class="idx-row"><span class="a">Vue</span><span class="b">Vue</span><span class="dots"></span><span class="pg">089</span></div><div class="idx-row"><span class="a">Webhook</span><span class="b">Webhook</span><span class="dots"></span><span class="pg">053</span></div><div class="idx-row"><span class="a">上线</span><span class="b">Go Live</span><span class="dots"></span><span class="pg">026</span></div><div class="idx-row"><span class="a">云服务器</span><span class="b">Cloud Server</span><span class="dots"></span><span class="pg">023</span></div><div class="idx-row"><span class="a">云端存储</span><span class="b">Cloud Storage</span><span class="dots"></span><span class="pg">008</span></div><div class="idx-row"><span class="a">代理</span><span class="b">Proxy</span><span class="dots"></span><span class="pg">047</span></div><div class="idx-row"><span class="a">依赖</span><span class="b">Dependency</span><span class="dots"></span><span class="pg">083</span></div><div class="idx-row"><span class="a">全栈</span><span class="b">Full-stack</span><span class="dots"></span><span class="pg">003</span></div><div class="idx-row"><span class="a">公网</span><span class="b">Public Network</span><span class="dots"></span><span class="pg">043</span></div><div class="idx-row"><span class="a">内网</span><span class="b">Private Network</span><span class="dots"></span><span class="pg">044</span></div></div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册</span><span>索引</span></div>
+</section>
+<section class="page index t-blue">
+  <div class="color-bar"></div>
+  <div class="kicker">索引 · Index（续）</div>
+  <h2>按中文（拼音 / 笔画大致排序）（续）</h2>
+  <div class="idx-cols"><div class="idx-row"><span class="a">前端</span><span class="b">Frontend</span><span class="dots"></span><span class="pg">001</span></div><div class="idx-row"><span class="a">包管理器</span><span class="b">Package Manager</span><span class="dots"></span><span class="pg">084</span></div><div class="idx-row"><span class="a">后端</span><span class="b">Backend</span><span class="dots"></span><span class="pg">002</span></div><div class="idx-row"><span class="a">命令行</span><span class="b">Command Line</span><span class="dots"></span><span class="pg">092</span></div><div class="idx-row"><span class="a">域名</span><span class="b">Domain</span><span class="dots"></span><span class="pg">030</span></div><div class="idx-row"><span class="a">备份</span><span class="b">Backup</span><span class="dots"></span><span class="pg">060</span></div><div class="idx-row"><span class="a">字段</span><span class="b">Field / Column</span><span class="dots"></span><span class="pg">016</span></div><div class="idx-row"><span class="a">定时任务</span><span class="b">Scheduled Task</span><span class="dots"></span><span class="pg">072</span></div><div class="idx-row"><span class="a">客户端</span><span class="b">Client</span><span class="dots"></span><span class="pg">004</span></div><div class="idx-row"><span class="a">容器</span><span class="b">Container</span><span class="dots"></span><span class="pg">037</span></div><div class="idx-row"><span class="a">对象存储</span><span class="b">Object Storage</span><span class="dots"></span><span class="pg">021</span></div><div class="idx-row"><span class="a">开发环境</span><span class="b">Development</span><span class="dots"></span><span class="pg">029</span></div><div class="idx-row"><span class="a">恢复</span><span class="b">Restore</span><span class="dots"></span><span class="pg">061</span></div><div class="idx-row"><span class="a">打包</span><span class="b">Bundle / Package</span><span class="dots"></span><span class="pg">081</span></div><div class="idx-row"><span class="a">授权</span><span class="b">Authorization</span><span class="dots"></span><span class="pg">063</span></div><div class="idx-row"><span class="a">接口</span><span class="b">Interface</span><span class="dots"></span><span class="pg">050</span></div><div class="idx-row"><span class="a">支付接口</span><span class="b">Payment Gateway</span><span class="dots"></span><span class="pg">071</span></div><div class="idx-row"><span class="a">数据库</span><span class="b">Database</span><span class="dots"></span><span class="pg">006</span></div><div class="idx-row"><span class="a">数据表</span><span class="b">Table</span><span class="dots"></span><span class="pg">015</span></div><div class="idx-row"><span class="a">文件上传</span><span class="b">File Upload</span><span class="dots"></span><span class="pg">020</span></div><div class="idx-row"><span class="a">日志</span><span class="b">Log</span><span class="dots"></span><span class="pg">057</span></div><div class="idx-row"><span class="a">服务器</span><span class="b">Server</span><span class="dots"></span><span class="pg">022</span></div><div class="idx-row"><span class="a">服务端</span><span class="b">Server-side</span><span class="dots"></span><span class="pg">005</span></div><div class="idx-row"><span class="a">本地存储</span><span class="b">Local Storage</span><span class="dots"></span><span class="pg">007</span></div><div class="idx-row"><span class="a">构建</span><span class="b">Build</span><span class="dots"></span><span class="pg">080</span></div><div class="idx-row"><span class="a">查询</span><span class="b">Query</span><span class="dots"></span><span class="pg">018</span></div><div class="idx-row"><span class="a">测试环境</span><span class="b">Staging</span><span class="dots"></span><span class="pg">028</span></div><div class="idx-row"><span class="a">消息队列</span><span class="b">Message Queue</span><span class="dots"></span><span class="pg">075</span></div><div class="idx-row"><span class="a">环境变量</span><span class="b">Environment Variable</span><span class="dots"></span><span class="pg">056</span></div><div class="idx-row"><span class="a">生产环境</span><span class="b">Production</span><span class="dots"></span><span class="pg">027</span></div><div class="idx-row"><span class="a">监控</span><span class="b">Monitoring</span><span class="dots"></span><span class="pg">058</span></div><div class="idx-row"><span class="a">短信服务</span><span class="b">SMS Service</span><span class="dots"></span><span class="pg">070</span></div><div class="idx-row"><span class="a">端口</span><span class="b">Port</span><span class="dots"></span><span class="pg">042</span></div><div class="idx-row"><span class="a">终端</span><span class="b">Terminal</span><span class="dots"></span><span class="pg">091</span></div><div class="idx-row"><span class="a">缓存</span><span class="b">Cache</span><span class="dots"></span><span class="pg">019</span></div><div class="idx-row"><span class="a">编译</span><span class="b">Compile</span><span class="dots"></span><span class="pg">082</span></div><div class="idx-row"><span class="a">认证</span><span class="b">Authentication</span><span class="dots"></span><span class="pg">062</span></div><div class="idx-row"><span class="a">记录</span><span class="b">Record / Row</span><span class="dots"></span><span class="pg">017</span></div><div class="idx-row"><span class="a">证书</span><span class="b">Certificate</span><span class="dots"></span><span class="pg">041</span></div><div class="idx-row"><span class="a">负载均衡</span><span class="b">Load Balancing</span><span class="dots"></span><span class="pg">077</span></div><div class="idx-row"><span class="a">邮件服务</span><span class="b">Email Service</span><span class="dots"></span><span class="pg">069</span></div><div class="idx-row"><span class="a">部署</span><span class="b">Deploy</span><span class="dots"></span><span class="pg">025</span></div><div class="idx-row"><span class="a">错误追踪</span><span class="b">Error Tracking</span><span class="dots"></span><span class="pg">059</span></div><div class="idx-row"><span class="a">镜像</span><span class="b">Image</span><span class="dots"></span><span class="pg">038</span></div><div class="idx-row"><span class="a">队列</span><span class="b">Queue</span><span class="dots"></span><span class="pg">074</span></div><div class="idx-row"><span class="a">防火墙</span><span class="b">Firewall</span><span class="dots"></span><span class="pg">046</span></div><div class="idx-row"><span class="a">限流</span><span class="b">Rate Limiting</span><span class="dots"></span><span class="pg">076</span></div></div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册</span><span>索引</span></div>
+</section>
+<section class="page index t-blue">
+  <div class="color-bar"></div>
+  <div class="kicker">索引 · Index（续）</div>
+  <h2>按英文（A–Z）</h2>
+  <div class="idx-cols"><div class="idx-row"><span class="a">API</span><span class="b">API</span><span class="dots"></span><span class="pg">049</span></div><div class="idx-row"><span class="a">Authentication</span><span class="b">认证</span><span class="dots"></span><span class="pg">062</span></div><div class="idx-row"><span class="a">Authorization</span><span class="b">授权</span><span class="dots"></span><span class="pg">063</span></div><div class="idx-row"><span class="a">Backend</span><span class="b">后端</span><span class="dots"></span><span class="pg">002</span></div><div class="idx-row"><span class="a">Backup</span><span class="b">备份</span><span class="dots"></span><span class="pg">060</span></div><div class="idx-row"><span class="a">Build</span><span class="b">构建</span><span class="dots"></span><span class="pg">080</span></div><div class="idx-row"><span class="a">Bundle / Package</span><span class="b">打包</span><span class="dots"></span><span class="pg">081</span></div><div class="idx-row"><span class="a">Cache</span><span class="b">缓存</span><span class="dots"></span><span class="pg">019</span></div><div class="idx-row"><span class="a">CDN</span><span class="b">CDN</span><span class="dots"></span><span class="pg">032</span></div><div class="idx-row"><span class="a">Certificate</span><span class="b">证书</span><span class="dots"></span><span class="pg">041</span></div><div class="idx-row"><span class="a">Client</span><span class="b">客户端</span><span class="dots"></span><span class="pg">004</span></div><div class="idx-row"><span class="a">Cloud Server</span><span class="b">云服务器</span><span class="dots"></span><span class="pg">023</span></div><div class="idx-row"><span class="a">Cloud Storage</span><span class="b">云端存储</span><span class="dots"></span><span class="pg">008</span></div><div class="idx-row"><span class="a">Cloudflare</span><span class="b">Cloudflare</span><span class="dots"></span><span class="pg">033</span></div><div class="idx-row"><span class="a">Command Line</span><span class="b">命令行</span><span class="dots"></span><span class="pg">092</span></div><div class="idx-row"><span class="a">Command-Line Interface</span><span class="b">CLI</span><span class="dots"></span><span class="pg">090</span></div><div class="idx-row"><span class="a">Compile</span><span class="b">编译</span><span class="dots"></span><span class="pg">082</span></div><div class="idx-row"><span class="a">Container</span><span class="b">容器</span><span class="dots"></span><span class="pg">037</span></div><div class="idx-row"><span class="a">Continuous Delivery</span><span class="b">CD</span><span class="dots"></span><span class="pg">079</span></div><div class="idx-row"><span class="a">Continuous Integration</span><span class="b">CI</span><span class="dots"></span><span class="pg">078</span></div><div class="idx-row"><span class="a">Cookie</span><span class="b">Cookie</span><span class="dots"></span><span class="pg">065</span></div><div class="idx-row"><span class="a">Cron</span><span class="b">Cron</span><span class="dots"></span><span class="pg">073</span></div><div class="idx-row"><span class="a">Database</span><span class="b">数据库</span><span class="dots"></span><span class="pg">006</span></div><div class="idx-row"><span class="a">Dependency</span><span class="b">依赖</span><span class="dots"></span><span class="pg">083</span></div><div class="idx-row"><span class="a">Deploy</span><span class="b">部署</span><span class="dots"></span><span class="pg">025</span></div><div class="idx-row"><span class="a">Development</span><span class="b">开发环境</span><span class="dots"></span><span class="pg">029</span></div><div class="idx-row"><span class="a">DNS</span><span class="b">DNS</span><span class="dots"></span><span class="pg">031</span></div><div class="idx-row"><span class="a">Docker</span><span class="b">Docker</span><span class="dots"></span><span class="pg">036</span></div><div class="idx-row"><span class="a">Domain</span><span class="b">域名</span><span class="dots"></span><span class="pg">030</span></div><div class="idx-row"><span class="a">Email Service</span><span class="b">邮件服务</span><span class="dots"></span><span class="pg">069</span></div><div class="idx-row"><span class="a">Environment Variable</span><span class="b">环境变量</span><span class="dots"></span><span class="pg">056</span></div><div class="idx-row"><span class="a">Error Tracking</span><span class="b">错误追踪</span><span class="dots"></span><span class="pg">059</span></div><div class="idx-row"><span class="a">Field / Column</span><span class="b">字段</span><span class="dots"></span><span class="pg">016</span></div><div class="idx-row"><span class="a">File Upload</span><span class="b">文件上传</span><span class="dots"></span><span class="pg">020</span></div><div class="idx-row"><span class="a">Firewall</span><span class="b">防火墙</span><span class="dots"></span><span class="pg">046</span></div><div class="idx-row"><span class="a">Frontend</span><span class="b">前端</span><span class="dots"></span><span class="pg">001</span></div><div class="idx-row"><span class="a">Full-stack</span><span class="b">全栈</span><span class="dots"></span><span class="pg">003</span></div><div class="idx-row"><span class="a">Go Live</span><span class="b">上线</span><span class="dots"></span><span class="pg">026</span></div><div class="idx-row"><span class="a">GraphQL</span><span class="b">GraphQL</span><span class="dots"></span><span class="pg">052</span></div><div class="idx-row"><span class="a">HTTPS</span><span class="b">HTTPS</span><span class="dots"></span><span class="pg">039</span></div><div class="idx-row"><span class="a">Image</span><span class="b">镜像</span><span class="dots"></span><span class="pg">038</span></div><div class="idx-row"><span class="a">Interface</span><span class="b">接口</span><span class="dots"></span><span class="pg">050</span></div><div class="idx-row"><span class="a">IP Address</span><span class="b">IP</span><span class="dots"></span><span class="pg">045</span></div><div class="idx-row"><span class="a">JSON</span><span class="b">JSON</span><span class="dots"></span><span class="pg">054</span></div><div class="idx-row"><span class="a">JWT</span><span class="b">JWT</span><span class="dots"></span><span class="pg">068</span></div><div class="idx-row"><span class="a">License</span><span class="b">License</span><span class="dots"></span><span class="pg">094</span></div><div class="idx-row"><span class="a">Load Balancing</span><span class="b">负载均衡</span><span class="dots"></span><span class="pg">077</span></div></div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册</span><span>索引</span></div>
+</section>
+<section class="page index t-blue">
+  <div class="color-bar"></div>
+  <div class="kicker">索引 · Index（续）</div>
+  <h2>按英文（A–Z）（续）</h2>
+  <div class="idx-cols"><div class="idx-row"><span class="a">Local Storage</span><span class="b">本地存储</span><span class="dots"></span><span class="pg">007</span></div><div class="idx-row"><span class="a">Log</span><span class="b">日志</span><span class="dots"></span><span class="pg">057</span></div><div class="idx-row"><span class="a">Message Queue</span><span class="b">消息队列</span><span class="dots"></span><span class="pg">075</span></div><div class="idx-row"><span class="a">Monitoring</span><span class="b">监控</span><span class="dots"></span><span class="pg">058</span></div><div class="idx-row"><span class="a">MySQL</span><span class="b">MySQL</span><span class="dots"></span><span class="pg">012</span></div><div class="idx-row"><span class="a">Netlify</span><span class="b">Netlify</span><span class="dots"></span><span class="pg">035</span></div><div class="idx-row"><span class="a">Next.js</span><span class="b">Next.js</span><span class="dots"></span><span class="pg">087</span></div><div class="idx-row"><span class="a">Nginx</span><span class="b">Nginx</span><span class="dots"></span><span class="pg">048</span></div><div class="idx-row"><span class="a">Node.js</span><span class="b">Node.js</span><span class="dots"></span><span class="pg">085</span></div><div class="idx-row"><span class="a">OAuth</span><span class="b">OAuth</span><span class="dots"></span><span class="pg">067</span></div><div class="idx-row"><span class="a">Object Storage</span><span class="b">对象存储</span><span class="dots"></span><span class="pg">021</span></div><div class="idx-row"><span class="a">Package Manager</span><span class="b">包管理器</span><span class="dots"></span><span class="pg">084</span></div><div class="idx-row"><span class="a">Payment Gateway</span><span class="b">支付接口</span><span class="dots"></span><span class="pg">071</span></div><div class="idx-row"><span class="a">Port</span><span class="b">端口</span><span class="dots"></span><span class="pg">042</span></div><div class="idx-row"><span class="a">PostgreSQL</span><span class="b">PostgreSQL</span><span class="dots"></span><span class="pg">011</span></div><div class="idx-row"><span class="a">Private Network</span><span class="b">内网</span><span class="dots"></span><span class="pg">044</span></div><div class="idx-row"><span class="a">Production</span><span class="b">生产环境</span><span class="dots"></span><span class="pg">027</span></div><div class="idx-row"><span class="a">Proxy</span><span class="b">代理</span><span class="dots"></span><span class="pg">047</span></div><div class="idx-row"><span class="a">Public Network</span><span class="b">公网</span><span class="dots"></span><span class="pg">043</span></div><div class="idx-row"><span class="a">Python</span><span class="b">Python</span><span class="dots"></span><span class="pg">086</span></div><div class="idx-row"><span class="a">Query</span><span class="b">查询</span><span class="dots"></span><span class="pg">018</span></div><div class="idx-row"><span class="a">Queue</span><span class="b">队列</span><span class="dots"></span><span class="pg">074</span></div><div class="idx-row"><span class="a">Rate Limiting</span><span class="b">限流</span><span class="dots"></span><span class="pg">076</span></div><div class="idx-row"><span class="a">React</span><span class="b">React</span><span class="dots"></span><span class="pg">088</span></div><div class="idx-row"><span class="a">README</span><span class="b">README</span><span class="dots"></span><span class="pg">093</span></div><div class="idx-row"><span class="a">Record / Row</span><span class="b">记录</span><span class="dots"></span><span class="pg">017</span></div><div class="idx-row"><span class="a">Redis</span><span class="b">Redis</span><span class="dots"></span><span class="pg">013</span></div><div class="idx-row"><span class="a">REST API</span><span class="b">REST</span><span class="dots"></span><span class="pg">051</span></div><div class="idx-row"><span class="a">Restore</span><span class="b">恢复</span><span class="dots"></span><span class="pg">061</span></div><div class="idx-row"><span class="a">Scheduled Task</span><span class="b">定时任务</span><span class="dots"></span><span class="pg">072</span></div><div class="idx-row"><span class="a">Schema</span><span class="b">Schema</span><span class="dots"></span><span class="pg">014</span></div><div class="idx-row"><span class="a">SDK</span><span class="b">SDK</span><span class="dots"></span><span class="pg">055</span></div><div class="idx-row"><span class="a">Server</span><span class="b">服务器</span><span class="dots"></span><span class="pg">022</span></div><div class="idx-row"><span class="a">Server-side</span><span class="b">服务端</span><span class="dots"></span><span class="pg">005</span></div><div class="idx-row"><span class="a">Serverless</span><span class="b">Serverless</span><span class="dots"></span><span class="pg">024</span></div><div class="idx-row"><span class="a">Session</span><span class="b">Session</span><span class="dots"></span><span class="pg">066</span></div><div class="idx-row"><span class="a">SMS Service</span><span class="b">短信服务</span><span class="dots"></span><span class="pg">070</span></div><div class="idx-row"><span class="a">SQLite</span><span class="b">SQLite</span><span class="dots"></span><span class="pg">009</span></div><div class="idx-row"><span class="a">SSL/TLS</span><span class="b">SSL</span><span class="dots"></span><span class="pg">040</span></div><div class="idx-row"><span class="a">Staging</span><span class="b">测试环境</span><span class="dots"></span><span class="pg">028</span></div><div class="idx-row"><span class="a">Supabase</span><span class="b">Supabase</span><span class="dots"></span><span class="pg">010</span></div><div class="idx-row"><span class="a">Table</span><span class="b">数据表</span><span class="dots"></span><span class="pg">015</span></div><div class="idx-row"><span class="a">Terminal</span><span class="b">终端</span><span class="dots"></span><span class="pg">091</span></div><div class="idx-row"><span class="a">Token</span><span class="b">Token</span><span class="dots"></span><span class="pg">064</span></div><div class="idx-row"><span class="a">Vercel</span><span class="b">Vercel</span><span class="dots"></span><span class="pg">034</span></div><div class="idx-row"><span class="a">Vue</span><span class="b">Vue</span><span class="dots"></span><span class="pg">089</span></div><div class="idx-row"><span class="a">Webhook</span><span class="b">Webhook</span><span class="dots"></span><span class="pg">053</span></div></div>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册</span><span>索引</span></div>
+</section>
+<section class="page doc t-blue">
+  <div class="color-bar"></div>
+  <div class="kicker">后记 · Afterword</div>
+  <h1>写在最后</h1>
+  <p class="lead">黑话不是为了拒人于门外，它只是行业里的省事说法。当你能把它翻译成人话，你就已经能和 AI、和程序员平等对话了。</p>
+  <p>这本手册的野心很小：让你在听到一个词时，不再点头假装懂，而是能说出 “哦，原来它就是那个意思”。它的野心也很大：让不懂技术的人，也能用 AI 把想法做成真正的产品。</p>
+  <p>如果某个词的解释你觉得还能更清楚，欢迎在 GitHub 上提出。这本书会一直更新。</p>
+  <hr class="rule">
+  <p class="muted">本册是《AI 开发黑话翻译手册》三册中的第二册。三册合起来，覆盖从产品想法、到开发部署、再到 AI 编程与 GitHub 的完整旅程。</p>
+  <p class="muted">翻译逻辑始终不变：<strong>程序员语言 → 普通人语言 → AI 能执行的开发需求语言。</strong></p>
+  <div class="pfoot"><span>AI 开发黑话翻译手册 · 第二册</span><span>后记</span></div>
+</section>
