@@ -9,6 +9,10 @@ const config = {
   jwtSecret: process.env.JWT_SECRET || 'dev-insecure-secret-change-me',
   dbPath: process.env.DB_PATH || path.join(__dirname, '..', 'data', 'app.sqlite'),
 
+  // Demo mode: serve sample invoices/inventory instead of calling Square.
+  // Handy for previewing the UI before Square is connected.
+  demo: process.env.DEMO === '1' || process.env.DEMO === 'true',
+
   square: {
     accessToken: process.env.SQUARE_ACCESS_TOKEN || '',
     environment: (process.env.SQUARE_ENVIRONMENT || 'production').toLowerCase(),
